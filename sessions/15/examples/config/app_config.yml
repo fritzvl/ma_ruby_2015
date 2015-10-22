@@ -1,0 +1,5 @@
+development:
+  background_color: "#ff0000"
+
+production:
+  background_color: "#0000ff"

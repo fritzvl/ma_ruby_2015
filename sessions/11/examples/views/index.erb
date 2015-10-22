@@ -1,0 +1,34 @@
+<h1>Services list page <%= page %> </h1>
+<div class="row">
+  <%= link_to "New", "/services/new", class: "btn btn-primary col-md-2 col-md-offset-9" %>
+</div>
+<br/>
+<table class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>Label</th>
+    <th>Last visited at</th>
+    <th>Counter</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% subjects.each do |subject| %>
+      <tr>
+        <td><%= link_to(subject.label, "/services/#{subject.id}") %></td>
+        <td><%= subject.last_visited_at %></td>
+        <td><%= link_to(subject.counter, "/services/#{subject.id}/visits") %></td>
+        <td>
+          <% form_for subject, "/services/#{subject.id}", method: :delete do |f| %><%= f.submit("Delete", "/services/#{subject.id}", class: "btn btn-danger") %>
+              <%= link_to("Edit", "/services/#{subject.id}/edit", class: "btn btn-success") %>
+          <% end %>
+
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= paginate subjects %>
+<%content_for :page_title do%>
+    Services
+<%end%>
