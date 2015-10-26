@@ -42,6 +42,6 @@ Project structure
 # Useful links
  * [Відеозаписи/скрінкасти занять](https://www.youtube.com/playlist?list=PL7Tk1QIFIqKrnaWFS-0E3RI_Mbat8Mlit "Youtube MA Ruby 2015 playlist")
  * [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown Cheatsheet")
-
+ * [Try GitHub](https://try.github.io)
 
 
