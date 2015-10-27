@@ -45,6 +45,6 @@ Project structure
  * [Відеозаписи/скрінкасти занять](https://www.youtube.com/playlist?list=PL7Tk1QIFIqKrnaWFS-0E3RI_Mbat8Mlit "Youtube MA Ruby 2015 playlist")
  * [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown Cheatsheet")
  * [Try GitHub](https://try.github.io)
- * [Design Pronciples and design patterns](http://www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf)
+ * [Design Principles and design patterns](http://www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf)
 
 
