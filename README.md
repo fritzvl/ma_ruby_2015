@@ -1,6 +1,8 @@
 Masters Academy Ruby/Rails courses project for season 2015/2016
 --------------------
 
+[![Join the chat at https://gitter.im/fritzvl/ma_ruby_2015](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/fritzvl/ma_ruby_2015?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Terms and conditions
 --------------------
  * Це документ визначає та декларує чим є курси з Ruby/Rails які проводить Masters Academy в 2015 році.
