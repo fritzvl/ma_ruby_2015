@@ -13,3 +13,10 @@ OOP principles
   * Liskov Substitution Principle(Принцип підстановки Барбари Лісков)
   * Interface Segregation Principle(Принцип розділення інтерфейсів)
   * Dependency Inversion Principle(Принцип інверсії залежностей)
+* Rotting design symptoms
+  * Rigidity(Жорсткість)
+  * Fragility(Ламкість)
+  * Immobility(Нерухомість)
+  * Viscosity(В'язкість)
+ 
+ 
