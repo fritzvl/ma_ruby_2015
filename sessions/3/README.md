@@ -21,6 +21,7 @@ Ruby programming language
   * Lexical closures, iterators and generators, with a unique block syntax
   * Exception handling
   * GC
+  * Multithreading
 
 * Examples
   * https://github.com/fritzvl/moc-ruby-2014/tree/master/2/examples
