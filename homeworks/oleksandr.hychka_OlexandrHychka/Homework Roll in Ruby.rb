@@ -25,10 +25,52 @@ costumer = Costumer.new
 costumer.set_name( 'Tom' )
 costumer.set_address( 'Street 9' )
 
+$name = costumer.get_name
 $address = costumer.get_address
 
+
+#class Menu
+class Menu
+  def output
+    puts '1 --- Classic Roll --- nori, rice, salmon fillet, cucumber --- 180g --- 54 uah'
+    puts '2 --- Philadelphia Roll --- nori, steamed rice, salmon fillet, cheese philladelphia --- 200g --- 75 uah'
+    puts '3 --- Hot Roll --- nori, rice, fillet of smoked salmon --- 185 --- 69 uah'
+  end
+end
+
+puts ''
+puts ''
+# Display Menu for costumer
+
+menu = Menu.new
+menu.output
+
+puts ''
+puts ''
+
+#class Order
+class Order
+def set_roll ( rName )
+   @roll_name = rName
+  end
+
+  def output_order
+   return @roll_name
+  end
+end
+
+$roll_name = order.output_order
+#Set new order
+
+order = Order.new
+order.set_roll( 'Roll Philadelphia' )
+puts 'I want ' +$roll_name
+puts ''
+puts ''
+
+
 # The basic object of creation
-#
+
 class Roll
   attr_accessor :nori, :rice, :fish, :special
 end
@@ -44,7 +86,7 @@ class BuilderRoll
   end
 
   def get_roll
-    "Your order. nori: #{@roll.nori}, rice: #{@roll.rice}, fish: #{@roll.fish}, special: #{@roll.special}"
+    "Hear your order. nori: #{@roll.nori}, rice: #{@roll.rice}, fish: #{@roll.fish}, special: #{@roll.special}"
   end
 end
 
@@ -86,7 +128,7 @@ class Builder_Roll_Philadelphia < BuilderRoll
   end
 
   def build_special
-    @roll.special = 'avocado'
+    @roll.special = 'cheese philladelphia'
   end
 end
 
@@ -151,6 +193,10 @@ class Coruier
     puts 'Go to adrress ' +$address
   end
 
+  def hello
+    puts 'Hello ' + $name + '!'
+end
+
   def give_order
     puts $order_is_ready
   end
@@ -159,4 +205,7 @@ end
 coruier = Coruier.new
 
 coruier.move
+puts ''
+coruier.hello
+puts ''
 coruier.give_order
