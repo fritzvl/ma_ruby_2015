@@ -1,5 +1,6 @@
-#Наче все зробив правильно, але шось не працюе вiн коректно. 
-
+#
+# Наче все зробив правильно, але шось не працюе вiн коректно.
+#
 class Camera
   attr_accessor :body_size, :sensor_size, :processor_type, :lens
 end
