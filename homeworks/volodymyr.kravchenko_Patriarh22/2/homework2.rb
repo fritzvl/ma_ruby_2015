@@ -114,7 +114,6 @@ def new_order
 	customer = Customer.new(1, "Кравченко Володимир", "Cміла, вул.Леніна 123", "kvs-smela@yandex.ua", "0731234567")
 	order = Order.new(1, [["burrito", 2], ["cola", 2], ["hot dog", 1], ["coffee", 1]])
 	handler = Handler.new(order)
-	#handler.order_hash = order.order_hash
 	handler.split_hash
 	handler.show_order
 	courier = Courier.new(customer, handler.cost)
