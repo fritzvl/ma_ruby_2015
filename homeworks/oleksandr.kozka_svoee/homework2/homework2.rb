@@ -14,10 +14,10 @@ class CameraBuilder
 
   def get_camera
       puts "camera build:"
-      puts "body - #{body_size}"
-      puts "sensor - #{sensor_size}"
-      puts "processor - #{processor_type}"
-      puts "lens - #{lens}"
+      puts "body - #{@camera.body_size}"
+      puts "sensor - #{@camera.sensor_size}"
+      puts "processor - #{@camera.processor_type}"
+      puts "lens - #{@camera.lens}"
   end
 end
 
