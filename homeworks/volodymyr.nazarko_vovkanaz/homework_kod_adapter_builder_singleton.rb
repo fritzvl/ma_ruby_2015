@@ -26,7 +26,7 @@ class Car
 
   def get_engine(car_engine="Стандартный")
   	@engine = car_engine
-	puts "Устанавливаем #{engine} двигатель"
+		puts "Устанавливаем #{engine} двигатель"
   end
 
   def go
@@ -37,15 +37,15 @@ class Car
   end
 
   def clutch
-	puts "Выжимаем сцепление"
+		puts "Выжимаем сцепление"
   end
 
   def change_speed
-	puts "Включаем первую передачу"
+		puts "Включаем первую передачу"
   end	
 
   def add_power
-	puts "Жмем на педаль газа"
+		puts "Жмем на педаль газа"
   end	
 
 end
@@ -57,17 +57,17 @@ class Destroyer < Car
  attr_accessor :test
 
 	def test_car
-	go
-	test("Тест")
+		go
+		test("Тест")
 	end
 
 	def test(car_test)	
-  	@test = car_test
-	  unless car_test.nil?
-	 	puts "Тест пройден"
-	  else 	
-		puts "Тест не пройден"
-	end
+  		@test = car_test
+	  		unless car_test.nil?
+	 				puts "Тест пройден"
+				else
+					puts "Тест не пройден"
+			end
 	end		
 
 end
@@ -75,19 +75,19 @@ end
 
 
 class Upgrade < Car
-attr_accessor :music, :car_engine
+	attr_accessor :music, :car_engine
 
-def initialize(car_engine)
-@engine = engine
-end
+	def initialize(car_engine)
+		@engine = engine
+	end
 
-def upgrade_our_car
-get_engine("от BMW X5")
-windows
-funny_music("Круг - Золотые купола")
-lights
-puts "Мы прокачали нашу тачку"
-end	
+	def upgrade_our_car
+		get_engine("от BMW X5")
+		windows
+		funny_music("Круг - Золотые купола")
+		lights
+		puts "Мы прокачали нашу тачку"
+	end
 
 	def windows
 		puts "Добавляем стеклоподьемники"
@@ -95,8 +95,8 @@ end
 	
 
 	def funny_music(car_music="Eminem - Lose yourself")
-	@music = car_music
-	puts "Ставим аудиосистему и включаем #{car_music}"
+		@music = car_music
+		puts "Ставим аудиосистему и включаем #{car_music}"
 	end
 	
 	def lights
