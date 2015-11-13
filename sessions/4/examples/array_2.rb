@@ -2,7 +2,8 @@
 #Copyright (C) 2014  Masterofcode LLC
 
 
-@test_array = [1, 2, 3, 4, 5, "b", "c", "d"]
+# @test_array = [1, 2, 3, 4, 5, "b", "c", "d"]
+@test_array = %w(1 2 3 4 5 b c d)
 
 puts "Access elements with slice"
 puts @test_array.join ","
