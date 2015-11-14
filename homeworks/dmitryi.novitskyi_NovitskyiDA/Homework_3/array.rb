@@ -1,77 +1,77 @@
 array = [11, 5, 128, 33, 66, 5, 213, 78, 100, 33, 213, 49, 91, 11, 111, 5, 55, 123, 71]
 other_array = [19, 11, 568, 2, 33, 222]
 
-puts 'Пересечение множеств массивов'
+puts 'Intersection of arrays'
 p array & other_array
 puts '________________________________________________________________________________'
 
-puts 'Объединение множеств(с удаленными дубликатами)'
+puts 'Union of sets arrays (with removed duplicates)'
 p array | other_array
 puts '________________________________________________________________________________'
 
-puts 'Сцепление массивов'
+puts 'Concatenation of arrays'
 p array + other_array
 puts '________________________________________________________________________________'
 
-puts 'Вычитание массивов'
+puts 'Array difference'
 p array - other_array
 puts '________________________________________________________________________________'
 
-puts 'Разделить каждый элемент на 10,'
+puts 'To divide each item on 10'
 p array.collect {|item| item.to_f/10}
 puts '________________________________________________________________________________'
 
-puts 'Найти максимальный элемент массива'
+puts 'Search of max element'
 p array.max
 puts '________________________________________________________________________________'
 
-puts 'Найти минимальный элемент массива'
+puts 'Search of min element'
 p array.min
 puts '________________________________________________________________________________'
 
-puts 'Найти количество элементов, которые равны минимальному'
+puts 'Find the number of elements that are equal to the minimum'
 p array.count(array.min)
 puts '________________________________________________________________________________'
 
-puts 'Удалить все нечетные числа из массива(не изменяя главный массив)'
+puts 'Remove all the odd numbers from the array (without changing the main array)'
 result_array = array.dup
 p result_array.delete_if {|item| item%2 != 0}
 puts '________________________________________________________________________________'
 
-puts 'Вывести каждый элемент массива, прибавив 1000 к каждому элементу'
+puts 'Print each element of the array with adding 1000 to each element'
 other_array.each {|item| puts item + 1000}
 puts '________________________________________________________________________________'
 
-puts 'Вывести пять первых элементов массива'
+puts 'Print the first five elements of the array'
 p array.first(5)
 puts '________________________________________________________________________________'
 
-puts 'Вывести три последних элемента массива'
+puts 'Print the last three elements of the array'
 p array.last(3)
 puts '________________________________________________________________________________'
 
-puts 'Вывести все элементы массива после максимального'
+puts 'Print all array elements after the maximum'
 p other_array[other_array.index(other_array.max)+1..other_array.index(other_array.last)]
 puts '________________________________________________________________________________'
 
-puts 'Показать длину массивов'
+puts 'Show lengths of arrays'
 puts array.length
 puts other_array.size
 puts '________________________________________________________________________________'
 
-puts 'Отсортировать от большего к меньшему'
+puts 'Sort from highest to lowest'
 p array.sort.reverse
 puts '________________________________________________________________________________'
 
-puts 'Выбрать из массива те числа, которые без остатка делятся на 5'
+puts 'Choose items from the array that divide without remainder by 5'
 p array.select {|x| x%5 == 0}
 puts '________________________________________________________________________________'
 
-puts 'Вывести уникальные элементы массива'
+puts 'Print the unique elements of the array'
 p array.uniq
 puts '________________________________________________________________________________'
 
-puts 'Найти пять наибольших элемента'
+puts 'Find five largest elements'
 p array.sort.reverse[0..4]
 puts '________________________________________________________________________________'
 
