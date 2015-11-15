@@ -1,0 +1,42 @@
+Abstract Builder
+  CouponBuilder
+    initialize
+    set_id
+    set_created_at
+    set_valid_till
+    set_used
+    set_company
+    set_length
+    set_symbols_allowed
+
+Concrete Builder
+  OutletCouponBuilder
+    set_id (id)
+    set_created_at (Time)
+    set_valid_till (Time)
+    set_used (bool)
+    set_company (string - title)
+    set_length (int)
+    set_symbols_allowed (array)
+
+  HolidayCouponBuilder
+
+Director
+  CouponGenerator
+    initialize (builder)
+    generate_coupon
+    validate_coupon
+
+Product
+  Coupon
+    id
+    created_at
+    valid_till
+    used
+    company
+    length
+    symbols_allowed
+
+Client
+  Application
+    return_generated_coupons
