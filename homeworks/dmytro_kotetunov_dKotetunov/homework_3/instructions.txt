@@ -1,0 +1,1 @@
+This is a program solving the maze. Generate maze 7 on 7. Turn on program using drones class. Beginning at a point 0.0. The path of the labyrinth is displayed in the console (West, East, North, South).

@@ -1,0 +1,37 @@
+Предметная область: создание цифрового фотоаппарата
+
+ Шаблон проектирования: Builder
+
+   Создаем базовый класс строительства Camera
+
+   - body size
+   - sensor size
+   - processor type
+   - kit lens
+
+   Создем класс строитель CameraBuilder
+
+ На основе класса BuildCamera создаем конкретные строители
+
+ Конкретный строитель 1
+
+   Класс FullFrameCamera
+
+   - big body
+   - full frame sensor
+   - processor #1
+   - 18-105mm lens
+
+ Конкретный строитель 2
+
+   Класс CropFrameCamera
+
+   - small body
+   - crop sensor
+   - processor #2
+   - 18-55mm lens
+
+   Создаем управляющий класс BuildCamera
+
+   - FullFrameCamera
+   - CropFrameCamera 
