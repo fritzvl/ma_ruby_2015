@@ -2,7 +2,7 @@
 
 @array2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9,]
 
-@array_rand = (1..rand(1000))
+@array_rand = (1..rand(10))
 
 puts "All array"
   puts "Array №1", @array1.join
