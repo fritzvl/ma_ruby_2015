@@ -1,41 +1,27 @@
-module MagicWords
+module FunnyM
 
-  module ClassMethods
-
-    def magic_methods(*magic_words)
-
-
-      magic_words.each do |magic_word|
-
-        define_method magic_word do
-
-
-          "Real magic word #{magic_word}"
-
-
-
-        end
-      end
-    end
-  end
-
-  #avoid extend and include
-  def self.included(base)
-    base.extend(ClassMethods)
+  def fun
+    "hahaha"
   end
 
 end
 
-class LonelyClass
+module SorrowM
 
-  include MagicWords
-
-  magic_methods :test, :rest, :fest
-
-
+  def sorrow
+    "life is pain"
+  end
 
 end
 
-p LonelyClass.new.test
-p LonelyClass.new.rest
-p LonelyClass.new.fest
+
+class Person
+
+  include FunnyM
+  extend SorrowM
+
+end
+
+
+p Person.sorrow
+p Person.new.fun
