@@ -26,25 +26,24 @@ puts "Вес машины #{auto.get_weight}"
 
 
 class AnotherCar < Car
+   include CashPayment
+   make_pay :uah, :eur, :usd
+
    class << self 
      def make_normal_auto
         puts "Мы сделали BMW X5"
-     end
+     end 
     end
 end
 
-normal_auto = AnotherCar.new
-normal_auto.go
-AnotherCar.make_normal_auto
 
 
 bad_auto = AnotherCar.new
 class << bad_auto
-  def lada
-    puts "Мы сделали Lada приора"
+  def make_bad_auto
+    puts "Мы сделали Lada Priora"
   end
 end
-bad_auto.lada
 
 new_class = class AnotherCar
 	class << self
@@ -52,7 +51,15 @@ new_class = class AnotherCar
 	end
 end
 
-
+puts "--------------------------"
+normal_auto = AnotherCar.new
+normal_auto.go
+AnotherCar.make_normal_auto
+puts AnotherCar.new.usd
+puts "--------------------------"
+bad_auto.make_bad_auto
+puts AnotherCar.new.uah
+puts "--------------------------"
 object = AnotherCar.new
 puts object.class
 puts new_class.class

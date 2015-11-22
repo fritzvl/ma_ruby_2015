@@ -46,7 +46,28 @@ class Car
 
   def add_power
 		100
-  end	
+  end
+
+
+	module CashPayment
+  		module CashMethodes
+
+    		def make_pay(*cash)
+      			cash.each do |cash|
+
+        			define_method cash do
+
+          				"Вы провели оплату за машину в #{cash}"
+
+        			end
+      			end
+    		end
+  		end
+
+  		def self.included(base)
+    		base.extend(CashMethodes)
+  		end
+ 	end
 
 end
 
