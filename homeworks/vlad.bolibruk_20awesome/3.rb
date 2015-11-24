@@ -12,10 +12,10 @@ response = http.request(request)
 
 if response.code == "200"
   result = JSON.parse(response.body)
-  
+  puts result.class.to_s  
   result.each do |doc|
-    puts doc["id"] #reference properties like this
-    puts doc # this is the result in object form    
+    #puts doc["id"] #reference properties like this
+    #puts doc # this is the result in object form    
     puts ""
     puts ""
   end
