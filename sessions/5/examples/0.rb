@@ -1,27 +1,24 @@
-module FunnyM
+class Pet
 
-  def fun
-    "hahaha"
+  attr_accessor :name
+
+  def voice
+    raise NotImplementedError
   end
 
 end
 
-module SorrowM
+class Cat < Pet
 
-  def sorrow
-    "life is pain"
+  def voice
+    "Meow"
   end
 
 end
 
-
-class Person
-
-  include FunnyM
-  extend SorrowM
+class Pig < Pet
 
 end
 
-
-p Person.sorrow
-p Person.new.fun
+puts "Cat says: #{Cat.new.voice}"
+puts "Dog says: #{Pig.new.voice}"

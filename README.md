@@ -54,6 +54,9 @@ Projects for teams(це загальні теми, вони будуть уто�
  * Dmytro Zhuk(https://github.com/ZhuChara2004)
 
 
+# [Homeworks](https://github.com/fritzvl/ma_ruby_2015/issues/70)  
+
+
 # Useful links
  * [Відеозаписи/скрінкасти занять](https://www.youtube.com/playlist?list=PL7Tk1QIFIqKrnaWFS-0E3RI_Mbat8Mlit "Youtube MA Ruby 2015 playlist")
  * [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown Cheatsheet")
