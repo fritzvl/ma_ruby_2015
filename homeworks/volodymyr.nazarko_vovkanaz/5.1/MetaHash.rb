@@ -38,10 +38,10 @@ end
 User = Struct.new(*pars['person'].keys.collect(&:to_sym)) do
 
  def little?
-   if personal_data['age'] <= 16
-     puts "Shkolota"
+   if personal_data['age'] <= 18
+     puts "Teenager"
    else
-     puts "Norm"
+     puts "Student"
    end
  end
 
@@ -49,33 +49,35 @@ end
 
 
 
-person = User.new(*pars["person"].values)
+human = User.new(*pars["person"].values)
 
-person.class.class_eval do
+human.class.class_eval do
   include Info
- info_methods
-  define_method :get_weight do
-   puts "3500 kg"
+  info_methods
+  define_method :get_snake_name do
+    additional_info["pets"].find {|i| i["species"] == "snake"}["name"]
   end
 end
 
 
-class << person
-  def get_spoiler
-    puts "Устанавливаем спойлер"
+class << human
+  def gender
+   if personal_data['gender'] == 'male'
+     puts "Man"
+   elsif personal_data['gender'] == 'female'
+     puts "Woman"
+   else
+     puts "Something else"
+   end
   end
-
-  def add_more_power
-    a = add_power * 2
-    puts "Мы усилили наш двигатель на #{a} лошадей"
-  end
-
 end
 
 
-p "Count of social_profiles"
-person.social_profiles_size
-p "sdqsadad"
-person.little?
-person.get_spoiler
-person.get_weight
+puts "Count of social_profiles"
+human.social_profiles_size
+puts "Who is our  user"
+human.little?
+puts "What's name of snake:"
+puts human.get_snake_name
+puts "Our user is:"
+puts human.gender
