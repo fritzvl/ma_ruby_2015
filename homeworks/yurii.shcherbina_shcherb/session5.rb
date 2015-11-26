@@ -3,15 +3,25 @@ module PersonalData
      puts("#{self} included in #{mod}")
   end
 
-def some_methods
-  if @data_hash["person"].key?("personal_data")
-    @data_hash["person"].["personal_data"].each do |key, value|
-      define_method("#{key.to_s}") do |new_value|
-        instance_variable_set("@#{key.to_s}", new_value)
+  def init
+    if @data_hash["person"].key?("personal_data")
+      @data_hash["person"]["personal_data"].each do |key, value|
+        self.class.send(:define_method, "#{key.to_s}?") {instance_variable_set("@#{key.to_s}", value)}
       end
     end
   end
-end
+
+  def child?
+    age? <= 12 ? true : false
+  end
+
+  def teenager?
+    (age? > 12) && (age? <= 19) ? true : false
+  end
+
+  def adult?
+    age? >= 20 ? true : false
+  end
 end
 
 module SocialProfiles
@@ -29,12 +39,7 @@ class Person
       class << self
         include PersonalData
       end
-    end
-  end
-
-  def change
-    class << self
-      include PersonalData
+      self.init
     end
   end
 
@@ -46,11 +51,13 @@ end
 require 'json'
 
 
-RESPONSE = '{"person":{"personal_data":{"name":"John Smith", "gender":"male", "age":56},"social_profiles":["http://facebook....","http://twitter...","http://"],"additional_info":{"hobby":["pubsurfing","drinking","hiking"], "pets":[{"name":"Mittens","species":"Felis silvestris catus"}]}}}'
+RESPONSE = '{"person":{"personal_data":{"name":"John Smith", "gender":"male", "age":18},"social_profiles":["http://facebook....","http://twitter...","http://"],"additional_info":{"hobby":["pubsurfing","drinking","hiking"], "pets":[{"name":"Mittens","species":"Felis silvestris catus"}]}}}'
 
 response = JSON.parse(RESPONSE)
 
-p response
-
 person_object=Person.new(response)
 puts(person_object.help)
+puts(person_object.name?)
+puts(person_object.teenager?)
+
+
