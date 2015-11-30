@@ -1,7 +1,7 @@
 class PersonBuilder
   def self.init(obj, data_hash)
     if data_hash.key?("person")
-      adding_attrib_accessor(obj, data_hash)
+      adding_attrib_accessor(eigenclass_of_oject(obj), data_hash)
       PersonalData::init(obj)
       SocialProfiles::init(obj)
       AddititonalInfo::init(obj)
@@ -15,12 +15,18 @@ class PersonBuilder
      end
   end
 
+  def self.eigenclass_of_oject(my_object)
+    class << my_object
+      self
+    end
+  end
+
   def self.adding_attrib_accessor(obj_reciver, datahash)
     datahash.each do |key, value|
       if value.instance_of?(Hash)
         adding_attrib_accessor(obj_reciver, value)
       end
-      obj_reciver.class.send(:define_method, "#{key.to_s}") do
+      obj_reciver.send(:define_method, "#{key.to_s}") do
         instance_variable_set("@#{key.to_s}", value)
       end
     end
@@ -115,7 +121,8 @@ puts(person_object.like?("drinking"))
 puts(person_object.has?("dog"))
 puts(person_object.some_method("some_argument"))
 
-
+other_p=Person.new(Hash.new)
+puts other_p.name
 
 
 
