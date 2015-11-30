@@ -1,18 +1,19 @@
 class PersonBuilder
   def self.init(obj, data_hash)
-    #@data_hash = obj.instance_variable_get("@data_hash")
-#    data_hash.each do |key, subhash|
-      adding_attrib_accessor(obj, data_hash)
-#    end
+    if data_hash.key?("person")
+      adding_attrib_accessor(obj, data_hash["person"])
       PersonalData::init(obj)
+      SocialProfiles::init(obj)
+      AddititonalInfo::init(obj)
       class << obj
-        include PersonalData
+        include PersonalData, SocialProfiles, AddititonalInfo
+      end
       end
   end
 
   def self.adding_attrib_accessor(obj_reciver, datahash)
     datahash.each do |key, value|
-      while value.instance_of?(Hash) do
+      if value.instance_of?(Hash)
         adding_attrib_accessor(obj_reciver, value)
       end
       obj_reciver.class.send(:define_method, "#{key.to_s}") do
@@ -23,22 +24,6 @@ class PersonBuilder
 end
 
 module PersonalData
-#  def self.included(mod)
-#    puts("#{self} included in #{mod}")
-#    puts(@a1)
-#  end
-
-#  def self.method_added(method_name)
-#    puts "Adding #{method_name.inspect}"
-#    puts(@data_hash)
-#  end
-#  def adding_attrib_reader
-#      @data_hash["person"]["personal_data"].each do |key, value|
-#        self.class.send(:define_method, "#{key.to_s}") do
-#          instance_variable_set("@#{key.to_s}", value)
-#        end
-#      end
-        #1self.define_method("#{key.to_s}?") {instance_variable_set("@#{key.to_s}", value)}
   def self.init(obj)
     if obj.respond_to?(:age)
       def child?
@@ -57,23 +42,51 @@ module PersonalData
 end
 
 module SocialProfiles
+  def self.init(obj)
+    if obj.respond_to?(:social_profiles)
+      pattern = /((?<=www.)\w*)|((?<=\/\/)(?!w{3}.)\w*)/
+      obj.social_profiles.each do |profiles|
+        profiles =~ pattern
+        define_method(($~.to_s+"er?").to_sym){true}
+      end
+
+      def how_many_social_profiles
+        social_profiles.count
+      end
+
+      def do_something_else
+        puts('May be in future...')
+      end
+
+    end
+  end
 end
 
 module AddititonalInfo
+  def self .init(obj)
+    if obj.respond_to?(:hobby)
+      def like?(kind_of_hobby)
+        hobby.include?(kind_of_hobby)
+      end
+    end
+
+    if obj.respond_to?(:pets)
+      def has?(species)
+         pets.each do |pets_hash|
+           if pets_hash.has_value?(species)
+             break
+           end
+         end
+      end
+    end
+
+  end
 end
 
 class Person
-  @data_hash=Hash.new
   def initialize(init_hash)
     @methods_before=methods
-#    @data_hash=init_hash.clone
-    if init_hash.key?("person")
-      PersonBuilder.init(self, init_hash["person"])
-#      class << self
-#        include PersonBuilder
-#      end
-#      self.init
-    end
+    PersonBuilder.init(self, init_hash)
   end
 
   def help
@@ -83,8 +96,7 @@ end
 
 require 'json'
 
-
-RESPONSE = '{"person":{"personal_data":{"name":"John Smith", "gender":"male", "age":18},"social_profiles":["http://facebook....","http://twitter...","http://"],"additional_info":{"hobby":["pubsurfing","drinking","hiking"], "pets":[{"name":"Mittens","species":"Felis silvestris catus"}]}}}'
+RESPONSE = '{"person":{"personal_data":{"name":"John Smith", "gender":"male", "age":18},"social_profiles":["http://facebook.com","http://twitter.com","http://vk.com"],"additional_info":{"hobby":["pubsurfing","drinking","hiking"], "pets":[{"name":"Mittens","species":"cat"},{"name":"Baloon","species":"dog"}]}}}'
 
 response = JSON.parse(RESPONSE)
 
@@ -92,5 +104,14 @@ person_object=Person.new(response)
 puts(person_object.help)
 puts(person_object.name)
 puts(person_object.teenager?)
+puts(person_object.social_profiles)
+puts(person_object.facebooker?)
+puts(person_object.how_many_social_profiles)
+puts(person_object.pets)
+puts(person_object.like?("drinking"))
+puts(person_object.has?("dog"))
+
+
+
 
 
