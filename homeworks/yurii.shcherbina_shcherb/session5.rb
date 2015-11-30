@@ -63,7 +63,7 @@ module SocialProfiles
 end
 
 module AddititonalInfo
-  def self .init(obj)
+  def self.init(obj)
     if obj.respond_to?(:hobby)
       def like?(kind_of_hobby)
         hobby.include?(kind_of_hobby)
@@ -79,7 +79,6 @@ module AddititonalInfo
          end
       end
     end
-
   end
 end
 
