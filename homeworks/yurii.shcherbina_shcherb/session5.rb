@@ -1,14 +1,18 @@
 class PersonBuilder
   def self.init(obj, data_hash)
     if data_hash.key?("person")
-      adding_attrib_accessor(obj, data_hash["person"])
+      adding_attrib_accessor(obj, data_hash)
       PersonalData::init(obj)
       SocialProfiles::init(obj)
       AddititonalInfo::init(obj)
       class << obj
         include PersonalData, SocialProfiles, AddititonalInfo
+        define_method("method_missing") do |id, *arguments|
+          puts("Method \"#{id}\" is not defined.")
+        end
+        private :method_missing
       end
-      end
+     end
   end
 
   def self.adding_attrib_accessor(obj_reciver, datahash)
@@ -109,6 +113,7 @@ puts(person_object.how_many_social_profiles)
 puts(person_object.pets)
 puts(person_object.like?("drinking"))
 puts(person_object.has?("dog"))
+puts(person_object.some_method("some_argument"))
 
 
 
