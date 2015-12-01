@@ -23,8 +23,8 @@ class PersonInfoGetter
   end
 
   def self.class_exists?(class_name)
-    checked_class = Module.const_get(class_name)
-    return checked_class.is_a?(Class)
+    class_to_check = Module.const_get(class_name)
+    return class_to_check.is_a?(Class)
   rescue NameError
     return false
   end
