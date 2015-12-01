@@ -1,0 +1,28 @@
+{
+  "person" :{
+    "personal_data":{
+      "name": "John Smith",
+      "gender":"male",
+      "age":15,
+      "address":"Some city, SOme av.33"
+    },
+    "social_profiles":[
+      "http://facebook",
+      "http://twitter",
+      "http://linkedin"
+    ],
+    "additional_info":{
+      "hobby":["pubsurfing","drinking","hiking"]
+    },
+    "pets":[
+      {
+        "name":"Mittens",
+        "species":"Felis silvestris catus"
+      },
+      {
+        "name":"Mittens",
+        "species":"Felis silvestris catus"
+      }
+    ]
+  }
+}
