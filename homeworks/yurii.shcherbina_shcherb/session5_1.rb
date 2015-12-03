@@ -9,7 +9,8 @@ class PersonBuilder
 
   def method_missing(name, *args, &block)
     begin
-      @target.send(:eval, "include #{name.to_s.capitalize}")
+      @target.instance_eval "include #{name.to_s.capitalize}"   # more clear then next line
+      #@target.send(:eval, "include #{name.to_s.capitalize}")
       begin
         self.send(name, *args, &block)
       rescue
@@ -32,10 +33,11 @@ class PersonBuilder
         adding_attrib_accessor(value)
       end
         @target.send(:define_method,"#{key.to_s}") do
-        instance_variable_set("@#{key.to_s}", value)
+          instance_variable_set("@#{key.to_s}", value)
         end
         begin
-          @target.send(:eval, "include #{key.to_s.capitalize}")
+          @target.instance_eval "include #{key.to_s.capitalize}"        # more clear then next line
+          #@target.send(:eval, "include #{key.to_s.capitalize}")
         rescue
         end
     end
@@ -43,22 +45,22 @@ class PersonBuilder
 end
 
 module Age
-      def child?
-        age <= 12
-      end
+  def child?
+    age <= 12
+  end
 
-      def teenager?
-        (age > 12) && (age <= 19)
-      end
+  def teenager?
+    (age > 12) && (age <= 19)
+  end
 
-      def adult?
-        age >= 20
-      end
+  def adult?
+    age >= 20
+  end
 end
 
 module Profiles
-  def profiles(method_name, value)
-    eval "#{method_name} (value)"
+  def profiles(method_name, *value)
+    instance_eval "#{method_name}(*value)"
   end
 
   def have?(arg)
@@ -126,7 +128,8 @@ puts(person_object.teenager?)
 puts(person_object.social_profiles)
 puts(person_object.facebooker?)
 puts(person_object.profiles("have?","facebook"))
-puts(person_object.how_many)
+puts(person_object.profiles("how_many"))                     #one way
+puts(person_object.how_many)                                 #anoter way
 puts(person_object.pets)
 puts(person_object.like?("drinking"))
 puts(person_object.has?("dog"))
