@@ -18,7 +18,6 @@ class PersonBuilder
     if PROBABLY_PERSON['person']
       person = Person.new(PROBABLY_PERSON['person'])
       person.data.each do |key, value|
-        # p "#{key} -> #{value}"
         module_name = key.split('_').collect(&:capitalize).join
         if module_exists?("#{module_name}")
           person.send(:extend, const_get("#{module_name}"))
