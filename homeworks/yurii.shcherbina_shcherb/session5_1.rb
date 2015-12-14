@@ -65,19 +65,13 @@ module Profiles
 
   def have?(arg)
     pattern = /((?<=www.)\w*)|((?<=\/\/)(?!w{3}.)\w*)/
-    result=false
     social_profiles.each do |profiles|
       profiles =~ pattern
-      if arg=$~.to_s+"er?"
-        result=true
-        break
+      if arg==$~.to_s
+        return true
       end
     end
-    if result
-      puts("yes")
-    else
-      puts("no")
-    end
+    false
   end
 
   def how_many
