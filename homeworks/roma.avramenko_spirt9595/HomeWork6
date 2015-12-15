@@ -1,0 +1,45 @@
+class PlayersFactory 
+
+def self.create_player(name, position, &block) //створюється метод в який передається дві змінні і блок 
+
+player_name = name // оголошення змінної 
+
+->(own_block) do //оголошення блока 
+yield // запуск блока 
+own_block.call //викликання методу для блока 
+p "I'm #{player_name}, and I play as #{position}" // виведення строки з інтерполяцією 
+end 
+
+end 
+
+end 
+
+class Playground 
+
+
+attr_accessor :arena_name, :players // гетери, сетери 
+
+def initialize(arena_name, player_involved) // створення конструктора 
+
+self.arena_name = arena_name // присвоєння змінної 
+self.players = [] // ініціюємо масив 
+player_involved.each do |player| // проходимо по хешу і перевіряємо його на наявність ключів: name, position 
+players.push PlayersFactory.create_player(player[:name], player[:position]) { p "I`m glad to play on #{self.arena_name}" } if player.has_key?(:name) && player.has_key?(:position) 
+end 
+end 
+
+def call_over(actions) // створюється метод в який передається змінна actions 
+self.players.each_with_index { |player, index| player.call(actions[index]) } 
+end 
+
+end 
+
+p_actions = [] // створюється масив 
+
+p_actions.push -> { p "Jumps and crys" } 
+p_actions.push -> { p "Crys and jumps and crys" } 
+p_actions.push -> { p "Stands as stone" } 
+
+playground = Playground.new("Football arena #1", [{name: "Bill", position: "Cornerback"}, {name: "Otto", position: "Wide Receiver"}, {name: "Lenny", position: "End"}])//заповнення 3 хешів данними 
+
+playground.call_over(p_actions) // для хешів викликається метод call_over в який передається масив
