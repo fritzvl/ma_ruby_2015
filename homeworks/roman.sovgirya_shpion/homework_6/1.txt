@@ -1,0 +1,13 @@
+В p_actions закидаються три лямбди, що вивиодять прості рядки, поки що все просто)
+
+При ініціалізації Playground створюється масив players з екземплярів PlayersFactory, які в свою чергу є лямбдами виду:
+->(own_block) do
+  p "I`m glad to play on #{self.arena_name}" 			//self.arena_name - завжди буде "Football arena #1".
+  own_block.call 										//тут будуть викликатися лямбди з массиву p_actions
+  p "I'm #{player_name}, and I play as  #{position}"	//тут все просто - вивід #{player_name} і #{position} з хешу, переданому при ініціалізації Playground
+end
+
+Далі при визові метода call_over відбувається проходження по раніше створеному масиву players, запускаються лямди в середині і в результаті маємо таку послідовність виводів:
+p "I`m glad to play on #{self.arena_name}" 			// завжди буде: "I`m glad to play on Football arena #1"
+p_actions[index]									// визовом player.call() запускається лямбда з масиву p_actions, наприклад "Jumps and crys"
+p "I'm #{player_name}, and I play as  #{position}"	// виводиться раніше вбиті #{player_name} і #{position} при заповненні масиву players і ініціалізаціїї обєктів PlayersFactory, наприклад: "I'm Bill, and I play as Cornerback"
