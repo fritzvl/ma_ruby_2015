@@ -24,7 +24,7 @@ response = JSON.parse(RESPONSE)
 #  end
 #end
 
-def cleate_classes (&name_class)
+def create_classes (&name_class)
   Proc.new do |lambda|
     lambda.call(yield)
   end
@@ -32,7 +32,7 @@ end
 
 def parse_person(person, &create_methods)
   person.each do |key, value|
-    cleate_class = cleate_classes { key.split("_").map! {|a| a.capitalize}.join}
+    cleate_class = create_classes { key.split("_").map! {|a| a.capitalize}.join}
     lambda = ->(name_class){ Struct.new(name_class,*yield(key, value))}
     cleate_class.call(lambda)
   end
