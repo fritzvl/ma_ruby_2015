@@ -1,0 +1,6 @@
+Домашня робота для проект №1 Агрегатор соціальних мереж 
+головна сторінка буде відображатись методом GET http://aggregator.com
+для подальшої роботи з сервісом потрібно реєстрація користувача метод POST http://aggregator.com/new_user
+для передічі ключових слів різних сервісів щоб їх відслідковувать метод POST http://aggregator.com/monitoring
+для відображення сервісу який відслідковується GET http://aggregator.com/youtube
+для видалення сервісу DELETE http://aggregator.com/youtube
