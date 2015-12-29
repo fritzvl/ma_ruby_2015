@@ -1,7 +1,7 @@
 
 require 'json'
 
-@ip = %w(192.168.1.1 172.24.1.253 10.90.90.90)
+@ip = %w(192.168.1.1 172.24.1.253 10 old.90.90.90)
 
 @iparr = @ip[0].split('.')
 @iprr = @ip[2].split('.')
@@ -17,7 +17,7 @@ zte = gets.chomp
 
 switch = { :zyxel => zy, :zte => zte}
  puts "Zyxel default ip is #{switch[:zyxel]} , but ZTE has #{switch[:zte]}  "
-switch.default = '10.90.90.90'
+switch.default = '10 old.90.90.90'
  puts "D-Link have ip looks like  #{switch[:d_link]}"
 
 def choice_equipment(switch)

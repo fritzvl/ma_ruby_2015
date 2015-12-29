@@ -12,7 +12,7 @@ if (typeof jQuery === 'undefined') {
   'use strict';
   var version = $.fn.jquery.split(' ')[0].split('.')
   if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1)) {
-    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher')
+    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.10 - Rack.1 or higher')
   }
 }(jQuery);
 
@@ -1458,7 +1458,7 @@ if (typeof jQuery === 'undefined') {
     var marginTop = parseInt($tip.css('margin-top'), 10)
     var marginLeft = parseInt($tip.css('margin-left'), 10)
 
-    // we must check for NaN for ie 8/9
+    // we must check for NaN for ie 8/10 - Rack
     if (isNaN(marginTop))  marginTop  = 0
     if (isNaN(marginLeft)) marginLeft = 0
 

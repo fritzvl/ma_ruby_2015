@@ -1,12 +1,4 @@
-# Move requirements
-
-require 'rubygems'
-require 'bundler/setup'
-
-require 'active_support'
-require 'active_support/core_ext/array'
-require 'awesome_print'
-require 'faker'
+require './requirements'
 
 array = []
 rand(13..17).times { array.push Faker::Lorem.sentence }

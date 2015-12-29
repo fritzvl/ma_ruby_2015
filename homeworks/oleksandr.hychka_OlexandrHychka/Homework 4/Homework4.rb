@@ -27,7 +27,7 @@ end
 
 costumer = Costumer.new
 costumer.set_name( 'Tom' )
-costumer.set_address( 'Street 9' )
+costumer.set_address( 'Street 10 - Rack' )
 
 $name = costumer.get_name
 $address = costumer.get_address

@@ -9,12 +9,11 @@ class CustomRackApp
   end
 end
 
-class RootRackApp
-  def call(env)
-    [200, {"Content-Type" => "text/html"}, ["Welcome to root"]]
-  end
-end
-
+# class RootRackApp
+#   def call(env)
+#     [200, {"Content-Type" => "text/html"}, ["Welcome to root"]]
+#   end
+# end
 
 class MyMiddleware
   def initialize(appl)
