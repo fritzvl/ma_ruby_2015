@@ -1,0 +1,10 @@
+Домашня робота відповідно до теми проекту "Блог на Github"
+
+Доступ до головної сторінки блогу відбівається за запитом GET http://username.github.com
+Публікація пового поста відбувається за запитом POST http://username.github.com/post
+Для перегляду якогось з вже опублікованих постів слід зробити запит GET http://username.github.com/post/:id
+Редагування публікації буде відбуватись за запитом PULL http://username.github.com/post/:id
+Видалення Публікації буде відбуватись за запитом DELETE http://username.github.com/post/:id
+Додавання коментаря до публікації POST http://username.github.com/post/:id/comment
+Редагування стовреного коментаря буде відбуватись за запитом PULL http://username.github.com/post/:id/comment/:id
+Видалення коментаря проходитиме за запитом DELETE http://username.github.com/post/:id/comment/:id
