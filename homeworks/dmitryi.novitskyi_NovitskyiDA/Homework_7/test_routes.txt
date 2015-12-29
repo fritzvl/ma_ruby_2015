@@ -1,0 +1,87 @@
+#test routes for the weather aggregator app
+
+Rails.application.routes.draw do
+
+  # метод GET для отримання форми реєстрації
+  get 'registration' => 'users#new'
+
+  # метод GET для входу
+  get 'sessions/login'
+
+  # метод GET для виходу
+  get 'sessions/logout'
+
+  # метод POST для створення сесії
+  post 'session' => 'session#create'
+
+  #RESTfull для користувачів
+  resources :users, only: [:new, :create]
+
+  #RESTfull для локацій
+  resources :locations
+
+  root 'locations#index'
+
+end
+
+#controllers:
+
+#sessions controller
+class SessionsController < ApplicationController
+
+  def login
+  end
+
+  def create
+  end
+
+  def loguot
+  end
+
+end
+
+#users controller
+class UsersController < ApplicationController
+
+  # метод GET для отримання форми створення нового користувача
+  def new
+  end
+
+  # метод POST для створення користувача
+  def create
+  end
+
+end
+
+#locations controller
+class LocationsController < ApplicationController
+
+  # метод GET для отримання усіх локаці
+  def index
+  end
+
+  # метод GET для отримання локації по id
+  def show
+  end
+
+  # метод GET для отримання форми створення нової локації
+  def new
+  end
+
+  # метод GET для отримання форми редагування локації
+  def edit
+  end
+
+  # метод POST для створення локації
+  def create
+  end
+
+  # метод PATCH/PUT для оновлення локації за id
+  def update
+  end
+
+  # метод DELETE для видалення локації за id
+  def destroy
+  end
+
+end
