@@ -1,0 +1,14 @@
+API для работы с очередью звонков
+Метод HTTP	URI	Действие
+GET	http://[hostname]/todo/api/v1.0/queu	Получить список очередей на номера
+GET	http://[hostname]/todo/api/v1.0/queu/[queu_id]	Получить номера в очереди
+POST	http://[hostname]/todo/api/v1.0/queu	Создать новую  очередь
+PUT	http://[hostname]/todo/api/v1.0/queu/[queu_id]	Обновить существующую  очеред
+DELETE	http://[hostname]/todo/api/v1.0/queu/[queu_id]	Удалить задачу
+
+Наша очередь будет иметь следующие поля:
+id: уникальный идентификатор задачи. Тип Numeric.
+title: Краткое описание задачи. Тип String.
+description: подробное описание задачи. Тип Text.
+done: отметка о выполнении. Тип Boolean.
+
