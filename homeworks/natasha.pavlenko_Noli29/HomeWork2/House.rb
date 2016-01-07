@@ -45,7 +45,7 @@ class MultistoryBuilding < BuilderHouse
   end
 
   def build_slate
-    @house.slate = "10 pcs"
+    @house.slate = "10 - Rack old pcs"
   end
 
   def build_bricks

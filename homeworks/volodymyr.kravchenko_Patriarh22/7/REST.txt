@@ -1,0 +1,37 @@
+#routes.rb
+Rails.application.routes.draw do
+  # метод resources перетворює контроллер items в RESTfull
+  resources :items
+end
+
+#items_controller.rb
+class ItemsController < ApplicationController
+
+    # /items (метод GET)
+    def index
+    end
+
+    # /items/:id (метод GET) отримуємо дані із БД згідно id запису
+    def show
+    end
+
+    # /items/new (метод GET) отримуємо форму /app/views/items/new.html.erb для додання даних в БД
+    def new
+    end 
+
+    # /items/:id/edit (метод GET) отримуємо форму /app/views/items/edit.html.erb для редагування інформації в БД по id
+    def edit
+    end
+
+    # /items (метод POST) створюємо запис у БД згідно даних із форми /app/views/items/new.html.erb
+    def create
+    end
+
+    # /items/:id (метод PUT) редагуємо запис у БД по id згідно даних із форми /app/views/items/edit.html.erb
+    def update
+    end
+
+    # /items/:id (метод DELETE) видалення даних із БД згідно id
+    def destroy
+    end
+end

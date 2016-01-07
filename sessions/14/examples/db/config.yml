@@ -2,7 +2,7 @@ development:
   adapter: sqlite3
   pool: 5
   timeout: 5000
-  database: "/home/bogdan/Documents/moc-ruby-2014/10/examples/db/example_dev.sqlite3"
+  database: "/home/bogdan/Documents/moc-ruby-2014/10 old/examples/db/example_dev.sqlite3"
   encoding: utf8
 
 production:

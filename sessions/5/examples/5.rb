@@ -35,4 +35,5 @@ puts "Mike's ID#{mike.class.object_id}"
 puts "Tom answers :#{tom.voice}"
 
 puts "Tom eigenclass ID: #{tom.eigenclass.object_id}"
+puts "Tom class ID: #{tom.class.object_id}"
 puts "Mike eigenclass ID: #{mike.eigenclass.object_id}"

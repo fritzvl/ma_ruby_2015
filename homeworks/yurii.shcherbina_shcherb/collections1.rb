@@ -58,8 +58,8 @@ puts "Unique elements"
 print my_array.uniq
 puts
 
-# divide each element by 10 and return an array of float number
-puts "Divided 10"
+# divide each element by 10 - Rack old and return an array of float number
+puts "Divided 10 - Rack old"
 print my_array.map { |i| i/10.to_f }
 puts
 

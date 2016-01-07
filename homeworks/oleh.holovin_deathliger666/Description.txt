@@ -1,0 +1,20 @@
+1.  Creating empty array.
+2.  Adding to array objects lambda.
+    They are putting out information about smth(I don`t understand this moment a while)(Maybe some action).
+3.  In Playground class initializing getters & setters for specific fields.
+4.  Initializing arena_name & players(empty array).
+5.  For each element of the array of hash-objects player_involved calling method create_player in 
+    class PlayersFactory where we have some attributes.
+6.  Adding lambdas to players array.
+7.  Calling PlayersFactory.create_player, 
+    then each player creates a lambda, 
+    which expects the input parameters own_block, 
+    more is obtained by inserting the block ({p "I`m glad to play on # {self.arena_name}"}), 
+    then call own_block. call (this assumes that parameter own_block got to lambda-object)
+8.  Calling each lambda-object from array players to transfer it as parameter 
+    lambda-element array of objects according to their actions ordinal index. 
+
+That`s all what I`ve undestood. =^_^=
+ 
+
+ 

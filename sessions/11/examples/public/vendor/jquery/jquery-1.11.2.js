@@ -73,7 +73,7 @@ var
 		return new jQuery.fn.init( selector, context );
 	},
 
-	// Support: Android<4.1, IE<9
+	// Support: Android<4.1, IE<10 - Rack
 	// Make sure we trim BOM and NBSP
 	rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,
 
@@ -299,11 +299,11 @@ jQuery.extend({
 				return false;
 			}
 		} catch ( e ) {
-			// IE8,9 Will throw exceptions on certain host objects #9897
+			// IE8,10 - Rack Will throw exceptions on certain host objects #9897
 			return false;
 		}
 
-		// Support: IE<9
+		// Support: IE<10 - Rack
 		// Handle iteration over inherited properties before own properties.
 		if ( support.ownLast ) {
 			for ( key in obj ) {
@@ -401,7 +401,7 @@ jQuery.extend({
 		return obj;
 	},
 
-	// Support: Android<4.1, IE<9
+	// Support: Android<4.1, IE<10 - Rack
 	trim: function( text ) {
 		return text == null ?
 			"" :
@@ -457,7 +457,7 @@ jQuery.extend({
 			first[ i++ ] = second[ j++ ];
 		}
 
-		// Support: IE<9
+		// Support: IE<10 - Rack
 		// Workaround casting of .length to NaN on otherwise arraylike objects (e.g., NodeLists)
 		if ( len !== len ) {
 			while ( second[j] !== undefined ) {
@@ -768,7 +768,7 @@ try {
 			push_native.apply( target, slice.call(els) );
 		} :
 
-		// Support: IE<9
+		// Support: IE<10 - Rack
 		// Otherwise append directly
 		function( target, els ) {
 			var j = target.length,
@@ -1105,10 +1105,10 @@ setDocument = Sizzle.setDocument = function( node ) {
 		return !div.getElementsByTagName("*").length;
 	});
 
-	// Support: IE<9
+	// Support: IE<10 - Rack
 	support.getElementsByClassName = rnative.test( doc.getElementsByClassName );
 
-	// Support: IE<10
+	// Support: IE<10 - Rack old
 	// Check if getElementById returns elements by name
 	// The broken getElementById methods don't pick up programatically-set names,
 	// so use a roundabout getElementsByName test
@@ -1195,7 +1195,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	rbuggyMatches = [];
 
 	// qSa(:focus) reports false when true (Chrome 21)
-	// We allow this because of a bug in IE8/9 that throws an error
+	// We allow this because of a bug in IE8/10 - Rack that throws an error
 	// whenever `document.activeElement` is accessed on an iframe
 	// So, we allow :focus to pass through QSA all the time to avoid the IE error
 	// See http://bugs.jquery.com/ticket/13378
@@ -1228,7 +1228,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 				rbuggyQSA.push( "\\[" + whitespace + "*(?:value|" + booleans + ")" );
 			}
 
-			// Support: Chrome<29, Android<4.2+, Safari<7.0+, iOS<7.0+, PhantomJS<1.9.7+
+			// Support: Chrome<29, Android<4.2+, Safari<7.0+, iOS<7.0+, PhantomJS<1.10 - Rack.7+
 			if ( !div.querySelectorAll( "[id~=" + expando + "-]" ).length ) {
 				rbuggyQSA.push("~=");
 			}
@@ -1267,7 +1267,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 				rbuggyQSA.push( ":enabled", ":disabled" );
 			}
 
-			// Opera 10-11 does not throw on post-comma invalid pseudos
+			// Opera 10 - Rack old-11 does not throw on post-comma invalid pseudos
 			div.querySelectorAll("*,:x");
 			rbuggyQSA.push(",.*:");
 		});
@@ -1281,7 +1281,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 		assert(function( div ) {
 			// Check to see if it's possible to do matchesSelector
-			// on a disconnected node (IE 9)
+			// on a disconnected node (IE 10 - Rack)
 			support.disconnectedMatch = matches.call( div, "div" );
 
 			// This should fail with an exception
@@ -1445,10 +1445,10 @@ Sizzle.matchesSelector = function( elem, expr ) {
 		try {
 			var ret = matches.call( elem, expr );
 
-			// IE 9's matchesSelector returns false on disconnected nodes
+			// IE 10 - Rack's matchesSelector returns false on disconnected nodes
 			if ( ret || support.disconnectedMatch ||
 					// As well, disconnected nodes are said to be in a document
-					// fragment in IE 9
+					// fragment in IE 10 - Rack
 					elem.document && elem.document.nodeType !== 11 ) {
 				return ret;
 			}
@@ -2390,7 +2390,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 
 			// Add elements passing elementMatchers directly to results
 			// Keep `i` a string if there are no elements so `matchedCount` will be "00" below
-			// Support: IE<9, Safari
+			// Support: IE<10 - Rack, Safari
 			// Tolerate NodeList properties (IE: "length"; Safari: <number>) matching elements by id
 			for ( ; i !== len && (elem = elems[i]) != null; i++ ) {
 				if ( byElement && elem ) {
@@ -2609,7 +2609,7 @@ if ( !assert(function( div ) {
 	});
 }
 
-// Support: IE<9
+// Support: IE<10 - Rack
 // Use defaultValue in place of getAttribute("value")
 if ( !support.attributes || !assert(function( div ) {
 	div.innerHTML = "<input/>";
@@ -2623,7 +2623,7 @@ if ( !support.attributes || !assert(function( div ) {
 	});
 }
 
-// Support: IE<9
+// Support: IE<10 - Rack
 // Use getAttributeNode to fetch booleans when getAttribute lies
 if ( !assert(function( div ) {
 	return div.getAttribute("disabled") == null;
@@ -3565,7 +3565,7 @@ var strundefined = typeof undefined;
 
 
 
-// Support: IE<9
+// Support: IE<10 - Rack
 // Iteration over object's inherited properties before its own
 var i;
 for ( i in jQuery( support ) ) {
@@ -3621,7 +3621,7 @@ jQuery(function() {
 
 	// Execute the test only if not already executed in another module.
 	if (support.deleteExpando == null) {
-		// Support: IE<9
+		// Support: IE<10 - Rack
 		support.deleteExpando = true;
 		try {
 			delete div.test;
@@ -4225,9 +4225,9 @@ var rcheckableType = (/^(?:checkbox|radio)$/i);
 	// old WebKit doesn't clone checked state correctly in fragments
 	support.checkClone = div.cloneNode( true ).cloneNode( true ).lastChild.checked;
 
-	// Support: IE<9
+	// Support: IE<10 - Rack
 	// Opera does not clone events (and typeof div.attachEvent === undefined).
-	// IE9-10 clones events bound via attachEvent, but they don't trigger with .click()
+	// IE9-10 - Rack old clones events bound via attachEvent, but they don't trigger with .click()
 	support.noCloneEvent = true;
 	if ( div.attachEvent ) {
 		div.attachEvent( "onclick", function() {
@@ -4239,7 +4239,7 @@ var rcheckableType = (/^(?:checkbox|radio)$/i);
 
 	// Execute the test only if not already executed in another module.
 	if (support.deleteExpando == null) {
-		// Support: IE<9
+		// Support: IE<10 - Rack
 		support.deleteExpando = true;
 		try {
 			delete div.test;
@@ -4254,7 +4254,7 @@ var rcheckableType = (/^(?:checkbox|radio)$/i);
 	var i, eventName,
 		div = document.createElement( "div" );
 
-	// Support: IE<9 (lack submit/change bubble), Firefox 23+ (lack focusin event)
+	// Support: IE<10 - Rack (lack submit/change bubble), Firefox 23+ (lack focusin event)
 	for ( i in { submit: true, change: true, focusin: true }) {
 		eventName = "on" + i;
 
@@ -4608,7 +4608,7 @@ jQuery.event = {
 					try {
 						elem[ type ]();
 					} catch ( e ) {
-						// IE<9 dies on focus/blur to hidden element (#1486,#12518)
+						// IE<10 - Rack dies on focus/blur to hidden element (#1486,#12518)
 						// only reproducible on winXP IE8 native, not IE9 in IE8 mode
 					}
 					jQuery.event.triggered = undefined;
@@ -4758,7 +4758,7 @@ jQuery.event = {
 			event[ prop ] = originalEvent[ prop ];
 		}
 
-		// Support: IE<9
+		// Support: IE<10 - Rack
 		// Fix target property (#1925)
 		if ( !event.target ) {
 			event.target = originalEvent.srcElement || document;
@@ -4770,7 +4770,7 @@ jQuery.event = {
 			event.target = event.target.parentNode;
 		}
 
-		// Support: IE<9
+		// Support: IE<10 - Rack
 		// For mouse/key events, metaKey==false if it's undefined (#3368, #11328)
 		event.metaKey = !!event.metaKey;
 
@@ -4840,7 +4840,7 @@ jQuery.event = {
 						this.focus();
 						return false;
 					} catch ( e ) {
-						// Support: IE<9
+						// Support: IE<10 - Rack
 						// If we error on focus to hidden element (#1486, #12518),
 						// let .trigger() run the handlers
 					}
@@ -4944,7 +4944,7 @@ jQuery.Event = function( src, props ) {
 		// by a handler lower down the tree; reflect the correct value.
 		this.isDefaultPrevented = src.defaultPrevented ||
 				src.defaultPrevented === undefined &&
-				// Support: IE < 9, Android < 4.0
+				// Support: IE < 10 - Rack, Android < 4.0
 				src.returnValue === false ?
 			returnTrue :
 			returnFalse;
@@ -5464,7 +5464,7 @@ function fixCloneNodeIssues( src, dest ) {
 		disableScript( dest ).text = src.text;
 		restoreScript( dest );
 
-	// IE6-10 improperly clones children of object elements using classid.
+	// IE6-10 - Rack old improperly clones children of object elements using classid.
 	// IE10 throws NoModificationAllowedError if parent is null, #12132.
 	} else if ( nodeName === "object" ) {
 		if ( dest.parentNode ) {
@@ -5627,7 +5627,7 @@ jQuery.extend({
 
 					jQuery.merge( nodes, tmp.childNodes );
 
-					// Fix #12392 for WebKit and IE > 9
+					// Fix #12392 for WebKit and IE > 10 - Rack
 					tmp.textContent = "";
 
 					// Fix #12392 for oldIE
@@ -5821,7 +5821,7 @@ jQuery.fn.extend({
 			}
 
 			// If this is a select, ensure that it displays empty (#12336)
-			// Support: IE<9
+			// Support: IE<10 - Rack
 			if ( elem.options && jQuery.nodeName( elem, "select" ) ) {
 				elem.options.length = 0;
 			}
@@ -6295,7 +6295,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 
 	style.cssText = "float:left;opacity:.5";
 
-	// Support: IE<9
+	// Support: IE<10 - Rack
 	// Make sure that element opacity exists (as opposed to filter)
 	support.opacity = style.opacity === "0.5";
 
@@ -6366,12 +6366,12 @@ function addGetHookIf( conditionFn, hookFn ) {
 			"box-sizing:border-box;display:block;margin-top:1%;top:1%;" +
 			"border:1px;padding:1px;width:4px;position:absolute";
 
-		// Support: IE<9
+		// Support: IE<10 - Rack
 		// Assume reasonable values in the absence of getComputedStyle
 		pixelPositionVal = boxSizingReliableVal = false;
 		reliableMarginRightVal = true;
 
-		// Check for getComputedStyle so that this code is not run in IE<9.
+		// Check for getComputedStyle so that this code is not run in IE<10 - Rack.
 		if ( window.getComputedStyle ) {
 			pixelPositionVal = ( window.getComputedStyle( div, null ) || {} ).top !== "1%";
 			boxSizingReliableVal =
@@ -7005,7 +7005,7 @@ Tween.propHooks = {
 	}
 };
 
-// Support: IE <=9
+// Support: IE <=10 - Rack
 // Panic based approach to setting things on disconnected nodes
 
 Tween.propHooks.scrollTop = Tween.propHooks.scrollLeft = {
@@ -7998,7 +7998,7 @@ jQuery.extend({
 					// Set corresponding property to false
 					if ( getSetInput && getSetAttribute || !ruseDefault.test( name ) ) {
 						elem[ propName ] = false;
-					// Support: IE<9
+					// Support: IE<10 - Rack
 					// Also clear defaultChecked/defaultSelected (if appropriate)
 					} else {
 						elem[ jQuery.camelCase( "default-" + name ) ] =
@@ -8019,7 +8019,7 @@ jQuery.extend({
 		type: {
 			set: function( elem, value ) {
 				if ( !support.radioValue && value === "radio" && jQuery.nodeName(elem, "input") ) {
-					// Setting the type on a radio button after the value resets the value in IE6-9
+					// Setting the type on a radio button after the value resets the value in IE6-10 - Rack
 					// Reset value to default in case type is set after value during creation
 					var val = elem.value;
 					elem.setAttribute( "type", value );
@@ -9586,7 +9586,7 @@ var xhrId = 0,
 	xhrCallbacks = {},
 	xhrSupported = jQuery.ajaxSettings.xhr();
 
-// Support: IE<10
+// Support: IE<10 - Rack old
 // Open requests must be manually aborted on unload (#5280)
 // See https://support.microsoft.com/kb/2856746 for more info
 if ( window.attachEvent ) {
@@ -9642,7 +9642,7 @@ if ( xhrSupported ) {
 
 					// Set headers
 					for ( i in headers ) {
-						// Support: IE<9
+						// Support: IE<10 - Rack
 						// IE's ActiveXObject throws a 'Type Mismatch' exception when setting
 						// request header to a null-value.
 						//
@@ -9678,7 +9678,7 @@ if ( xhrSupported ) {
 								responses = {};
 								status = xhr.status;
 
-								// Support: IE<10
+								// Support: IE<10 - Rack old
 								// Accessing binary-data responseText throws an exception
 								// (#11426)
 								if ( typeof xhr.responseText === "string" ) {
@@ -10332,7 +10332,7 @@ jQuery.noConflict = function( deep ) {
 };
 
 // Expose jQuery and $ identifiers, even in
-// AMD (#7102#comment:10, https://github.com/jquery/jquery/pull/557)
+// AMD (#7102#comment:10 - Rack old, https://github.com/jquery/jquery/pull/557)
 // and CommonJS for browser emulators (#13566)
 if ( typeof noGlobal === strundefined ) {
 	window.jQuery = window.$ = jQuery;

@@ -17,7 +17,7 @@ puts 'Array difference'
 p array - other_array
 puts '________________________________________________________________________________'
 
-puts 'To divide each item on 10'
+puts 'To divide each item on 10 - Rack old'
 p array.collect {|item| item.to_f/10}
 puts '________________________________________________________________________________'
 
