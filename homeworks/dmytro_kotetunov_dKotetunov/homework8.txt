@@ -1,0 +1,17 @@
+API для TasksManager
+GET    /projects - сторінка з усіма проектами, list projects
+POST   /projects - new project
+GET    /projects/:id - edit project
+GET    /projects/:id - show project
+PATCH  /projects/:id - update project
+DELETE /projects/:id - delete project
+
+
+GET    /projects/:id/tasks - list tasks for project
+POST   /projects/:id/tasks - create task for project
+GET    /projects/:id/tasks - new task for project
+GET    /projects/:id/tasks/:id - edit task
+PATCH  /projects/:id/tasks/:id - update task
+DELETE /projects/:id/tasks/:id - delete task
+
+
