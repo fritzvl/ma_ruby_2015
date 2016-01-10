@@ -1,0 +1,7 @@
+<p>Are you sure you want to delete:</p>
+<blockquote><p><%= @project.content %></p></blockquote>
+<form action="/delete/<%= @project.id %>" method="POST">
+  <input name="_method" type="hidden" value="delete" />
+  <button type="submit"  name="ok">OK</button>
+  <button type="submit"  name="cancel">Cancel</button>
+</form>
