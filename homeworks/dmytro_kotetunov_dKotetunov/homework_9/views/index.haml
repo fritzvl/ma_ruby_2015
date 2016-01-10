@@ -1,0 +1,11 @@
+%h3 Projects
+%a(href="/projects/new")Create a new project
+- unless @projects.empty?
+  %ul#projects
+  - @projects.each do |project|
+    %li{:id => "project-#{project.id}"}
+      %a(href="/projects/#{project.id}")= project.name
+      %a(href="/projects/edit/#{project.id}") EDIT
+      %a(href="/projects/delete/#{project.id}") DELETE
+- else
+  %p No projects!

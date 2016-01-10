@@ -2,46 +2,71 @@ require 'rubygems'
 require 'sinatra'
 require 'shotgun'
 require 'data_mapper'
+require 'haml'
 
-DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/tasks_manager.db")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/tasks_manager.db")
+
 class Project
   include DataMapper::Resource
-  property :id, Serial
-  property :content, Text, :required => true
-  property :created, DateTime
-end
-DataMapper.finalize.auto_upgrade!
-
-
-get '/' do
-  @projects = Project.all(:order => :created.desc)
-  redirect '/new' if @projects.empty?
-  erb :index
+  property :id,           Serial
+  property :name,         String, :required => true
+  property :description,  Text
+  property :moderator,       String
+  property :created_at,   DateTime
+  property :updated_at,   DateTime
 end
 
-get '/new' do
-  @title = "Create project"
-  erb :new
+# list all
+get '/projects' do
+  @projects = Project.all
+  haml :index
 end
-
-post '/new' do
-  Project.create(:content => params[:content], :created => Time.now)
-  redirect '/'
+# add new
+get '/projects/new' do
+  @project = Project.new
+  haml :new
 end
-
-get '/delete/:id' do
-  @project = Project.first(:id => params[:id])
-  erb :delete
-end
-post '/delete/:id' do
-  if params.has_key?("ok")
-    project = Project.first(:id => params[:id])
-    project.destroy
-    redirect '/'
+# create new
+post '/projects' do
+  @project = Project.new(params[:project])
+  if @project.save
+    status 201
+    redirect '/projects/' + @project.id.to_s
   else
-    erb :index
+    status 400
+    haml :new
   end
 end
-
-
+# edit
+get '/projects/edit/:id' do
+  @project = Project.get(params[:id])
+  haml :edit
+end
+# update
+put '/projects/:id' do
+  @project = Project.get(params[:id])
+  if @project.update(params[:project])
+    status 201
+    redirect '/projects/' + params[:id]
+  else
+    status 400
+    haml :edit
+  end
+end
+# delete project confirmation
+get '/projects/delete/:id' do
+  @project = Project.get(params[:id])
+  haml :delete
+end
+# delete
+delete '/projects/:id' do
+  Project.get(params[:id]).destroy
+  redirect '/projects'
+end
+# show
+get '/projects/:id' do
+  @project = Project.get(params[:id])
+  haml :show
+end
+DataMapper.auto_upgrade!
 
