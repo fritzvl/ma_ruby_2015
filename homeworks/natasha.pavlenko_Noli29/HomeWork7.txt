@@ -1,0 +1,17 @@
+API
+
+GET    /signout           sessions#destroy
+GET    /signin            sessions#new
+GET    /signup            users#new
+GET    /api/hashtags      api/hashtags#index
+GET    /api/hashtags/:id  api/hashtags#show
+GET    /users/new         users#new
+GET    /users/:id         users#show
+GET    /sessions          sessions#index
+POST   /sessions          sessions#create
+GET    /sessions/new      sessions#new
+GET    /sessions/:id/edit sessions#edit
+GET    /sessions/:id      sessions#show
+PATCH  /sessions/:id      sessions#update
+DELETE /sessions/:id      sessions#destroy
+
