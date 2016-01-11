@@ -3,10 +3,13 @@
 Головна сторінка - це сторінка для ознайомлення з сайтом.
 Щоб працювати з ресурсом, користувач повинен зареєстуватися.
 
-Коли користувач зарєєстувався і залогінився він може працювати з ресурсом.
+Коли користувач зареєструвався і залогінився він може працювати з ресурсом.
 
-1. GET http://weather-aggregator/locations - Отримуємо список локацій
-2. GET http://weather-aggregator/locations/:id - Отримуємо певну локацію
-3. POST http://weather-aggregator/locations - Створюємо нову локацію
-4. PUT http://weather-aggregator/locations/:id - Оновлюємо локацію
-5. DELETE http://weather-aggregator/locations/:id - Видаляємо локацію
+1. GET http://weather-aggregator/ - Отримуємо головну сторінку сайту
+2. GET http://weather-aggregator/locations - Отримуємо список локацій
+3. GET http://weather-aggregator/locations/:id/show - Отримуємо певну локацію
+4. GET http://weather-aggregator/locations/new - Отримуємо форму для заповнення нової локації
+5. POST http://weather-aggregator/locations/new - Зберігаємо нову локацію
+6. GET http://weather-aggregator/locations/:id/edit - Отримуємо форму для редагування локації
+7. PUT(POST) http://weather-aggregator/locations/:id/edit - Оновлюємо локацію
+8. DELETE(GET) http://weather-aggregator/locations/:id/delete - Видаляємо локацію
