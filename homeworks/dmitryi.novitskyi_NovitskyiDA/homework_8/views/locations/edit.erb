@@ -1,0 +1,5 @@
+<form action="/locations/<%= @location["id"] %>/edit" method="post">
+  <p>Country <input type="text" name="country" value="<%= @location["country"] %>"></p>
+  <p>Description <input type="text" name="description" value="<%= @location["description"] %>"></p>
+  <p><input type="submit" value="Save"></p>
+</form>
