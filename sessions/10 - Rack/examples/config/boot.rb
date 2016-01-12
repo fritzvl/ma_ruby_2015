@@ -10,11 +10,11 @@ class CustomRackApp
 end
 
 #
-# class RootRackApp
-#   def call(env)
-#     [200, {"Content-Type" => "text/html"}, ["Welcome to root"]]
-#   end
-# end
+class RootRackApp
+  def call(env)
+    [200, {"Content-Type" => "text/html"}, ["Welcome to root"]]
+  end
+end
 #
 
 class ExampleRackApp
@@ -105,9 +105,9 @@ end
 
 
 #
-# get '/' do
-#   "Hello World from Sinatra!"
-# end
+get '/' do
+  "Hello World from Sinatra!"
+end
 #
 
 get '/time' do

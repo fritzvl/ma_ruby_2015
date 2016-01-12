@@ -11,3 +11,8 @@ Rack web server Ruby middleware
 
 * Examples
   * https://github.com/fritzvl/moc-ruby-2014/tree/master/8/examples
+
+* Web-Frameworks
+  * Sinatra
+  * Padrino
+  
