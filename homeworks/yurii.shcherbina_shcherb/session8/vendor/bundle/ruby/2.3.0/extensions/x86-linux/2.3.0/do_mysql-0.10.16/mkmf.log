@@ -1,0 +1,587 @@
+find_library: checking for mysql_query() in -lmysqlclient... -------------------- no
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby  -lpthread -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘mysql_query’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lmysqlclient
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘mysql_query’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lmysqlclient
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib/mysql -Wl,-R/usr/local/lib/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘mysql_query’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib/mysql -Wl,-R/usr/local/lib/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lmysqlclient
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib/mysql5/mysql -Wl,-R/usr/local/lib/mysql5/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘mysql_query’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib/mysql5/mysql -Wl,-R/usr/local/lib/mysql5/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lmysqlclient
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib -Wl,-R/usr/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘mysql_query’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib -Wl,-R/usr/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lmysqlclient
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib/mysql -Wl,-R/usr/lib/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘mysql_query’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib/mysql -Wl,-R/usr/lib/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lmysqlclient
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib/mysql5/mysql -Wl,-R/usr/lib/mysql5/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘mysql_query’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib/mysql5/mysql -Wl,-R/usr/lib/mysql5/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lmysqlclient
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘mysql_query’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lmysqlclient
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib/mysql -Wl,-R/usr/local/lib/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘mysql_query’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib/mysql -Wl,-R/usr/local/lib/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lmysqlclient
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib/mysql5/mysql -Wl,-R/usr/local/lib/mysql5/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘mysql_query’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib/mysql5/mysql -Wl,-R/usr/local/lib/mysql5/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lmysqlclient
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/opt/local/lib -Wl,-R/opt/local/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘mysql_query’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/opt/local/lib -Wl,-R/opt/local/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lmysqlclient
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/opt/local/lib/mysql -Wl,-R/opt/local/lib/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘mysql_query’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/opt/local/lib/mysql -Wl,-R/opt/local/lib/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lmysqlclient
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/opt/local/lib/mysql5/mysql -Wl,-R/opt/local/lib/mysql5/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘mysql_query’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_query; return !p; }
+/* end */
+
+"gcc -o conftest -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/i686-linux -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/backward -I/home/uri/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include  -D_FILE_OFFSET_BITS=64   -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat  -fPIC conftest.c  -L. -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/opt/local/lib/mysql5/mysql -Wl,-R/opt/local/lib/mysql5/mysql -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/home/uri/.rvm/rubies/ruby-2.3.0/lib -L/home/uri/.rvm/rubies/ruby-2.3.0/lib -lruby -lmysqlclient  -lpthread -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lmysqlclient
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_query();
+14: int t(void) { mysql_query(); return 0; }
+/* end */
+
+--------------------
+

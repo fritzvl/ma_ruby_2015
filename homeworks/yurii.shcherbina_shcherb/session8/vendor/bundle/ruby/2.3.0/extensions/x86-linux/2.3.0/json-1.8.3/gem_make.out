@@ -1,0 +1,13 @@
+current directory: /home/uri/ma_ruby_2015/homeworks/yurii.shcherbina_shcherb/session8/vendor/bundle/ruby/2.3.0/gems/json-1.8.3/ext/json
+/home/uri/.rvm/rubies/ruby-2.3.0/bin/ruby -r ./siteconf20160112-6614-fa70fe.rb extconf.rb
+creating Makefile
+
+current directory: /home/uri/ma_ruby_2015/homeworks/yurii.shcherbina_shcherb/session8/vendor/bundle/ruby/2.3.0/gems/json-1.8.3/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/uri/ma_ruby_2015/homeworks/yurii.shcherbina_shcherb/session8/vendor/bundle/ruby/2.3.0/gems/json-1.8.3/ext/json
+make "DESTDIR="
+make: Цель `all' не требует выполнения команд.
+
+current directory: /home/uri/ma_ruby_2015/homeworks/yurii.shcherbina_shcherb/session8/vendor/bundle/ruby/2.3.0/gems/json-1.8.3/ext/json
+make "DESTDIR=" install
