@@ -1,0 +1,18 @@
+<h3>Edit customer data</h3>
+<a href="/customers/<%= @customer.id %>/delete">Delete this customer</a><br><br>
+<form action="/customers/<%= @customer.id %>/edit" method="post">
+  <input name="_method" type="hidden" value="put" />
+  <label for="name"><strong>Customer name:</strong></label><br>
+  <input type="text" name="name" id="name" value="<%= @customer.name %>" style="width: 250px;">
+  <br>
+  <label for="adress"><strong>Customer adress:</strong></label><br>
+  <input id="adress" type="text" name="adress" value="<%= @customer.adress %>" style="width: 250px;">
+  <br>
+  <label for="e_mail"><strong>Customer e-mail:</strong></label><br>
+  <input id="e_mail" type="text" name="e_mail" value="<%= @customer.e_mail %>" style="width: 250px;">
+  <br>
+  <label for="phone_number"><strong>Customer phone number:</strong></label><br>
+  <input id="phone_number" type="text" name="phone_number" value="<%= @customer.phone_number %>" style="width: 250px;">
+  <br>
+  <input id="post_submit" name="commit" type="submit" value="Save">
+</form>
