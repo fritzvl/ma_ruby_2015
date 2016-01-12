@@ -1,0 +1,11 @@
+%label(for="name")Name:
+%input#name(type="text" name="project[name]"value="#{@project.name}")
+
+%label(for="moderator")Moderator:
+%select#quantity(name="project[moderator]")
+  - %w[Kevin John Wayne Bruce].each do |moderator|
+    %option{:value => moderator, :selected => (true if moderator == @project.moderator)}= moderator
+
+%label(for="description") Description:
+%textarea#description(name="project[description]")
+  =@project.description

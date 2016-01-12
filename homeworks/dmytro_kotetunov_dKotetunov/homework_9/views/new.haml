@@ -1,0 +1,5 @@
+%form(action="/projects" method="POST")
+  %fieldset
+    %legend Create a new project
+    = haml :form, :layout => false
+  %input(type="submit" value="Create") or <a href='/projects'>cancel</a>

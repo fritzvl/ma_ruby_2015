@@ -1,0 +1,8 @@
+%h3= @project.name
+%p Moderator: #{@project.moderator}
+%p Description: #{@project.description}
+%p Created at: #{@project.created_at}
+%p Last updated at: #{@project.updated_at}
+%a(href="/projects/edit/#{@project.id}")EDIT
+%a(href="/projects/delete/#{@project.id}")DELETE
+%a(href='/projects') Back to index
