@@ -1,3 +1,28 @@
+<<<<<<< HEAD
+module PersonalData
+  def self.included(mod)
+     puts("#{self} included in #{mod}")
+  end
+
+  def init
+    if @data_hash["person"].key?("personal_data")
+      @data_hash["person"]["personal_data"].each do |key, value|
+        self.class.send(:define_method, "#{key.to_s}?") {instance_variable_set("@#{key.to_s}", value)}
+      end
+    end
+  end
+
+  def child?
+    age? <= 12 ? true : false
+  end
+
+  def teenager?
+    (age? > 12) && (age? <= 19) ? true : false
+  end
+
+  def adult?
+    age? >= 20 ? true : false
+=======
 class PersonBuilder
   def self.init(obj, data_hash)
     if data_hash.key?("person")
@@ -48,10 +73,29 @@ module PersonalData
         age >= 20
       end
     end
+>>>>>>> e3f5950d6e8a70b329c91025ce4f8f117be07c0a
   end
 end
 
 module SocialProfiles
+<<<<<<< HEAD
+end
+
+module AddititonalInfo
+end
+
+class Person
+  @data_hash=Hash.new
+  def initialize(init_hash)
+    @methods_before=methods
+    @data_hash=init_hash.clone
+    if init_hash.key?("person")
+      class << self
+        include PersonalData
+      end
+      self.init
+    end
+=======
   def self.init(obj)
     if obj.respond_to?(:social_profiles)
       pattern = /((?<=www.)\w*)|((?<=\/\/)(?!w{3}.)\w*)/
@@ -96,6 +140,7 @@ class Person
   def initialize(init_hash)
     @methods_before=methods
     PersonBuilder.init(self, init_hash)
+>>>>>>> e3f5950d6e8a70b329c91025ce4f8f117be07c0a
   end
 
   def help
@@ -105,12 +150,21 @@ end
 
 require 'json'
 
+<<<<<<< HEAD
+
+RESPONSE = '{"person":{"personal_data":{"name":"John Smith", "gender":"male", "age":18},"social_profiles":["http://facebook....","http://twitter...","http://"],"additional_info":{"hobby":["pubsurfing","drinking","hiking"], "pets":[{"name":"Mittens","species":"Felis silvestris catus"}]}}}'
+=======
 RESPONSE = '{"person":{"personal_data":{"name":"John Smith", "gender":"male", "age":18},"social_profiles":["http://facebook.com","http://twitter.com","http://vk.com"],"additional_info":{"hobby":["pubsurfing","drinking","hiking"], "pets":[{"name":"Mittens","species":"cat"},{"name":"Baloon","species":"dog"}]}}}'
+>>>>>>> e3f5950d6e8a70b329c91025ce4f8f117be07c0a
 
 response = JSON.parse(RESPONSE)
 
 person_object=Person.new(response)
 puts(person_object.help)
+<<<<<<< HEAD
+puts(person_object.name?)
+puts(person_object.teenager?)
+=======
 puts(person_object.name)
 puts(person_object.teenager?)
 puts(person_object.social_profiles)
@@ -124,5 +178,6 @@ puts(person_object.some_method("some_argument"))
 other_p=Person.new(Hash.new)
 puts other_p.name
 
+>>>>>>> e3f5950d6e8a70b329c91025ce4f8f117be07c0a
 
 

@@ -1,0 +1,6 @@
+%form(action="/projects/#{@project.id}" method="POST")
+  %input(type="hidden" name="_method" value="PUT")
+  %fieldset
+    %legend Update project
+    = haml :form, :layout => false
+  %input(type="submit" value="Update") or <a href='/projects'>cancel</a>

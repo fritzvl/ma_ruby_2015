@@ -1,0 +1,16 @@
+<h2>List of locations</h2>
+
+<% @hash.each do |elem| %>
+    <p>
+      <p>Country: <%= elem['country'] %></p>
+      <p>Description: <%= elem['description'] %></p>
+      <a href="/locations/<%= elem['id'] %>/show">Show location</a>
+      <a href="/locations/<%= elem['id'] %>/edit">Edit location</a>
+      <a href="/locations/<%= elem['id'] %>/delete">Delete location</a>
+    </p>
+    <p>______________________________________________</p>
+<% end %>
+
+<p><a href="/locations/new">Add location</a></p>
+
+<p><a href="/">Home page</a></p>

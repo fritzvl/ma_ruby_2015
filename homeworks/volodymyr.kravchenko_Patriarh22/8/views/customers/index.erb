@@ -1,0 +1,18 @@
+<strong><a href="/customers/new">Create new customer</a></strong>
+<h2 align="center">Customer list</h2>
+<table style="width:100%" border="1">
+  <tr>
+    <th>Name</th>
+    <th>Adress</th>
+    <th>e-mail</th>
+    <th>Phone number</th>
+  </tr>
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><strong><a href="/customers/<%= customer.id %>/edit"><%= customer.name %></a></strong></td>
+      <td><%= customer.adress %></a></td> 
+      <td><%= customer.e_mail %></a></td>
+      <td><%= customer.phone_number %></a></td>
+    </tr>
+  <% end %>
+</table>
