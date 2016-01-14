@@ -1,30 +1,18 @@
-Lesson 14. Front-end stack
-------------------
+Lesson 7. Threads and Fibers
 
-RoR front-end
+Multi-threading in Ruby
 ---------------
-* Layouts/Views/Partials
-* Assets pipeline. Why and how?
-* ERB/HAML/Slim/Liquid
-* Forms/Simple forms
-* SCSS
-* Javascript, AJAX, Turbolinks
+
+* Threads
+* GIL
+* Fibers
+* Troubles with concurrency
 
 
-Useful links
-------------
-* http://guides.rubyonrails.org/working_with_javascript_in_rails.html
-* http://guides.rubyonrails.org/asset_pipeline.html
-* http://guides.rubyonrails.org/layouts_and_rendering.html
-* http://guides.rubyonrails.org/form_helpers.html
-* https://github.com/rails/sass-rails
-* https://github.com/plataformatec/simple_form
-* http://haml.info/
-* http://slim-lang.com/
-* http://liquidmarkup.org/
+* https://github.com/celluloid/celluloid
+* https://www.igvita.com/2010/03/22/untangling-evented-code-with-ruby-fibers/
 
 
 
-
-
-
+* Examples
+  * https://github.com/fritzvl/moc-ruby-2014/tree/master/7/examples

@@ -1,4 +1,4 @@
-Lesson 13. Text search
+Lesson 14. Text search
 ------------------
 
 Common cases of using text-search
