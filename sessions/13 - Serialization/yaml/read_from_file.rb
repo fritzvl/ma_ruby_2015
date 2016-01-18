@@ -1,6 +1,6 @@
 load './classes.rb'
 
-loaded_file = File.read('./dump.yml')
+loaded_file = File.read('./yaml_dump.yml')
 
 ap '============================================='
 ap 'Loaded file:'

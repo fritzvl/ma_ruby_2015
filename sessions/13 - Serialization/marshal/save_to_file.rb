@@ -10,7 +10,7 @@ ap "By #{p.author.name}"
 ap "It's class is: '#{p.class}'"
 ap '============================================='
 
-serialized = YAML::dump p
+serialized = Marshal.dump p
 
 p ''
 
@@ -20,4 +20,4 @@ ap serialized
 ap "It's class is: '#{serialized.class}'"
 ap '============================================='
 
-File.open('./yaml_dump.yml', 'w') { |file| file.write(serialized) }
+File.open('./marshal_dump', 'w') { |file| Marshal.dump(p, file) }
