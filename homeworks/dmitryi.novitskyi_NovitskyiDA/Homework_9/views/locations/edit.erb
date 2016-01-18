@@ -1,0 +1,5 @@
+<form action="/locations/<%= @location.id %>/edit" method="post">
+  <p>Country <input type="text" name="name" value="<%= @location.name %>"></p>
+  <p>Description <input type="text" name="body" value="<%= @location.body %>"></p>
+  <p><input type="submit" value="Save"></p>
+</form>

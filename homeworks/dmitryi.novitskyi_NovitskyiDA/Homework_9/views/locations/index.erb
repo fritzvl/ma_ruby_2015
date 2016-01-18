@@ -1,0 +1,16 @@
+<h2>List of locations</h2>
+
+<% @locations.each do |l| %>
+    <p>
+      <p>Country: <%= l.name %></p>
+      <p>Description: <%= l.body %></p>
+      <a href="/locations/<%= l.id %>/show">Show location</a>
+      <a href="/locations/<%= l.id %>/edit">Edit location</a>
+      <a href="/locations/<%= l.id %>/delete">Delete location</a>
+    </p>
+    <p>______________________________________________</p>
+<% end %>
+
+<p><a href="/locations/new">Add location</a></p>
+
+<p><a href="/">Home page</a></p>
