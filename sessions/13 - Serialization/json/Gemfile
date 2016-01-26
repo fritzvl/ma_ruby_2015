@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+
+gem 'pry', '~> 0.10.3'
+gem 'awesome_print'
+gem 'activemodel', '~>4.2.5'

@@ -3,10 +3,14 @@
 
 ### Types of serialization:
 
-* text (YAML, XML, ...)
-* binary (Protocol Buffers)
+* Text
+    * JSON
+    * YAML
+    * XML
+    * Built-in
+* Binary 
+    * Protobuf
+    * Thrift
+    * MsgPack
 
-### Ruby tools:
 
-* Marshal
-* ActiveRecord
