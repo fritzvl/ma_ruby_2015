@@ -1,0 +1,5 @@
+1. GET http:// compserv.com - Main page
+2. GET http://compserv.com/item/:id - Page with characteristics
+3. POST http://compserv.com/new - Creating new Computer
+4. PUT http://compserv.com/edit/:id - Changing smth in computer
+5. DELETE http://compserv.com/item/:id - Deleting old computers 
