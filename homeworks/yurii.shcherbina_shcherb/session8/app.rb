@@ -5,12 +5,11 @@ Bundler.require(:default)
 require 'sinatra'
 require 'dm-core'
 require 'dm-timestamps'
-require 'dm-sqlite-adapter'
+require 'dm-postgres-adapter'
 
-DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/database.sqlite3")
-#DataMapper.setup(:default, 'jdbc:mysql://root:root@localhost:3306/session8')
-DataMapper.finalize
-DataMapper.auto_upgrade!
+#DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/database.sqlite3")
+DataMapper.setup(:default, 'postgres://postgres:postgres@localhost:5432/session8')
+#DataMapper.setup(:default, 'jdbc:postgresql://postgres:postgres@localhost:5432/session8')
 
 class User
   include DataMapper::Resource
@@ -20,6 +19,9 @@ class User
   property :passwd, String
   property :created_at, DateTime
 end
+
+DataMapper.finalize
+DataMapper.auto_upgrade!
 
 get '/' do
   erb :index
