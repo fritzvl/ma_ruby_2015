@@ -1,0 +1,5 @@
+apples 3 pears 4
+oranges 2 grapefruits 7 mandarins 10 limes 4
+bananas 7 mangoes 5
+strawberries 16 raspberries 20 blueberries 33 kiwifruit 7 passionfruit 6
+tomatoes 10 avocados 4

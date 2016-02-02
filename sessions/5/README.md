@@ -1,12 +1,14 @@
-Lesson 4. Mastering ruby objects(meta-programming)
+Lesson 5. Mastering ruby objects
 
 Ruby objects and classes
 ---------------
 
+* Everything is an object
 * Flexible syntax, several ways to do something
-* Understanding of modules. include and extends difference. Understanding of self.
-* Changing current object. class_eval, instance_eval, define_method 
-* Dynamic objects via Struct
+* Extending existing classes class_eval, define_method
+* Changing existing objects(instance_eval). Eigenclasses. Singleton methods.  
+
 
 * Examples
-  * https://github.com/fritzvl/moc-ruby-2014/tree/master/4/examples
+  * https://github.com/fritzvl/ma_ruby_2015/tree/master/sessions/5/examples
+
