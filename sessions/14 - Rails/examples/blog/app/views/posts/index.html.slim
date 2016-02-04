@@ -7,30 +7,8 @@
     .col-md-7
       = link_to image_tag("http://placehold.it/700x300", class: 'img img-responsive'), post
     .col-md-5
-      h3= post.title
+      h3= link_to post.title, post
       h5= post.created_at
       p= truncate post.body, length: 160
       = link_to 'Show', post, class: 'btn btn-primary'
   hr
-
-/table
-/  thead
-/    tr
-/      th Title
-/      th Body
-/      th
-/      th
-/      th
-/
-/  tbody
-/    - @posts.each do |post|
-/      tr
-/        td = post.title
-/        td = post.body
-/        td = link_to 'Show', post
-/        td = link_to 'Edit', edit_post_path(post)
-/        td = link_to 'Destroy', post, data: {:confirm => 'Are you sure?'}, :method => :delete
-/
-/br
-/
-/= link_to 'New Post', new_post_path
