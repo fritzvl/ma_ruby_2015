@@ -1,0 +1,5 @@
+= simple_form_for [@post, @post.comments.build] do |f|
+  .form-group
+    = f.input :body, as: :text, label: false
+  .form-group
+    = f.button :submit

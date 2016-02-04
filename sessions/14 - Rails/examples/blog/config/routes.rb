@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   get 'contacts' => 'static_pages#contacts'
 
   root 'posts#index'

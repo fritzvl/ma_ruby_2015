@@ -20,17 +20,18 @@
   .col-md-12
     .well
       h4 Leave a Comment:
-      form role="form"
-        .form-group
-          textarea.form-control rows="3"
-        button.btn.btn-primary type="submit"  Submit
+      = render 'comments/form'
+      /form role="form"
+      /  .form-group
+      /    textarea.form-control rows="3"
+      /  button.btn.btn-primary type="submit"  Submit
 - if @post.comments.present?
   .row
     .col-md-12
       hr
       h4 Comments:
       hr
-      - @post.comments.each do |comment|
+      - @post.comments.reject(&:new_record?).each do |comment|
         .media
           = image_tag 'http://placehold.it/64x64', class: 'pull-left'
           .media-body
