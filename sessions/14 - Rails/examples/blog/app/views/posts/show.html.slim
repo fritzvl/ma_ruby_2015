@@ -3,7 +3,7 @@
     h1
       = @post.title
       /small= link_to 'Edit', edit_post_path(@post)
-    p.lead by User
+    p.lead= @post.user.email
     hr
 .row
   .col-md-6
@@ -36,6 +36,6 @@
           = image_tag 'http://placehold.it/64x64', class: 'pull-left'
           .media-body
             h4.media-heading
-              | User
+              = comment.user.email
               small= " #{comment.created_at}"
             = comment.body
