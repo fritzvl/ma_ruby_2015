@@ -1,0 +1,37 @@
+.row
+  .col-md-12
+    h1
+      = @post.title
+      /small= link_to 'Edit', edit_post_path(@post)
+    p.lead by User
+    hr
+.row
+  .col-md-6
+    span.glyphicon.glyphicon-time
+    = " Posted on #{@post.created_at.to_formatted_s} "
+    = link_to ' Edit', edit_post_path(@post)
+    hr
+.row
+  .col-md-12
+    .body
+      = @post.body
+    hr
+.row
+  .col-md-12
+    .well
+      h4 Leave a Comment:
+      form role="form"
+        .form-group
+          textarea.form-control rows="3"
+        button.btn.btn-primary type="submit"  Submit
+.row
+  .col-md-12
+    hr
+    h4 Comments:
+    hr
+    .media
+      .media-body
+        h4.media-heading
+          | User
+          small August 25, 2014 at 9:30 PM
+        | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
