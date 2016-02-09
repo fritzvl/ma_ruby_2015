@@ -1,9 +1,0 @@
-source "https://rubygems.org"
-
-gem 'sinatra', git: 'git@github.com:sinatra/sinatra.git'
-gem 'rspec'
-gem 'rack-test'
-gem 'forecast_io'
-gem 'factual-api'
-gem 'activesupport'
-gem 'rest-client'
