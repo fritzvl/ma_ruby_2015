@@ -25,15 +25,30 @@ RubyOnRails web application framework
 
 * Testing routing and controllers
 
+-------------------
+
+### Blog Application
+
+* Basics
+  * Post as Scaffold
+  * Comments from scratch
+* [Devise](https://github.com/plataformatec/devise)
+  * Add users and authentication
+  * Set posts and comments ownership to users
+* [ActiveAdmin](https://github.com/activeadmin/activeadmin)
+  * Add ActiveAdmin backend and Author model
+  * Set posts ownership to Author
+  * Move posts management to ActiveAdmin
+  * Add simple dashboard
+  
+-------------------
+
 
 * Useful links
-    http://edgeguides.rubyonrails.org/routing.html
-    http://edgeguides.rubyonrails.org/action_controller_overview.html
+    * [Routing](http://edgeguides.rubyonrails.org/routing.html)
+    * [Action Controller](http://edgeguides.rubyonrails.org/action_controller_overview.html)
 
-* Examples
-  * https://github.com/fritzvl/moc-ruby-2014/tree/master/11/examples
-
-
+-------------------
 
 * Machine-like URL
   /weather_services/1/20150301/temperature/:lat/:long
