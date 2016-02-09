@@ -14,6 +14,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'slim-rails'
 gem 'simple_form'
 gem 'devise'
+gem 'annotate', github: 'ctran/annotate_models'
 
 gem 'activeadmin', github: 'activeadmin'
 

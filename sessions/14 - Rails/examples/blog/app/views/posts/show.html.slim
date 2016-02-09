@@ -2,14 +2,12 @@
   .col-md-12
     h1
       = @post.title
-      /small= link_to 'Edit', edit_post_path(@post)
-    p.lead= @post.user.email
+    p.lead= @post.author.email
     hr
 .row
   .col-md-6
     span.glyphicon.glyphicon-time
     = " Posted on #{@post.created_at.to_formatted_s} "
-    = link_to ' Edit', edit_post_path(@post)
     hr
 .row
   .col-md-12
@@ -21,10 +19,6 @@
     .well
       h4 Leave a Comment:
       = render 'comments/form'
-      /form role="form"
-      /  .form-group
-      /    textarea.form-control rows="3"
-      /  button.btn.btn-primary type="submit"  Submit
 - if @post.comments.present?
   .row
     .col-md-12
