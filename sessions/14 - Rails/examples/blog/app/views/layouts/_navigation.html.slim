@@ -9,8 +9,9 @@ nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
       = link_to 'Blog', root_path, class: 'navbar-brand'
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
-        li
-          = link_to 'Contacts', contacts_path
+        li= link_to 'Contacts', contacts_path
+        li= link_to 'Controller', some_long_task_strait_path
+        li= link_to 'Sidekiq', some_long_task_sidekiq_path
       ul.nav.navbar-nav.pull-right
         - if user_signed_in?
           li= link_to 'Logout', destroy_user_session_path, method: :delete

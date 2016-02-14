@@ -18,6 +18,11 @@ gem 'annotate', github: 'ctran/annotate_models'
 
 gem 'activeadmin', github: 'activeadmin'
 
+gem 'sidekiq'
+gem 'sinatra'
+gem 'slim'
+
+
 group :development, :test do
   gem 'byebug'
   gem 'faker'
