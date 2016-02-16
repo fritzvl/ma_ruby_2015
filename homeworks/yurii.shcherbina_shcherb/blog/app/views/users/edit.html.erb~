@@ -1,0 +1,17 @@
+<% provide(:title, "Edit user") %>
+
+<div class="post">
+  <div class="posttop"></div>
+  <div class="postitem">
+    <h1>Update your profile</h1>
+
+    <%= render 'form' %>
+  </div>
+  <div class='postbottom'>
+    <%= link_to 'Show', @user %> |
+    <%= link_to 'Back', users_path %>
+  </div>
+</div>
+
+
+

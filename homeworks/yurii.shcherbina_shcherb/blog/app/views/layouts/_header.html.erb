@@ -1,0 +1,16 @@
+  <div id="header">
+    <ul id="topmenu">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "About", about_path %></li>
+      <li><%= link_to "Help", help_path %></li>
+      <% if !signed_in? %>
+        <li><%= link_to "Sign in", signin_path %></li>
+      <% else %>
+        <li><%= link_to "Sign out", signout_path %></li>
+      <% end %>
+      <li><%= link_to "Others", '#' %></li>
+    </ul>
+    <div class="clear"></div>
+    <h1 id="sitename"><%= link_to "Blog", root_path %><span class="description">This is the Ruby on Rails sample application</span></h1>
+  </div>
+ 

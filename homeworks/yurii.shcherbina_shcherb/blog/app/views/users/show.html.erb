@@ -1,0 +1,25 @@
+<% provide(:title, @user.name) %>
+
+<div class="post">
+  <div class="posttop"></div>
+  <div class="postitem">
+    <p id="notice"><%= notice %></p>
+    <h2>User <%= current_user[:name] %>
+      <span class="postinfo">Info about user</span>
+    </h2>
+    <p>
+      <%= gravatar_for @user %>
+      <strong>Name:</strong>
+      <%= @user.name %>
+    </p>
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
+  </div>
+  <div class='postbottom'>
+    <%= link_to 'Edit', edit_user_path(@user) %> |
+    <%= link_to 'Back', users_path %>
+  </div>
+</div>
+

@@ -1,0 +1,18 @@
+<% provide(:title, "Listing all posts") %>
+
+<div id="tab">
+  <div id="tabhead">
+    <% if signed_in? %>
+      <ul>
+        <li class="activetab"><%= link_to 'All Posts', allposts_path %></li>
+        <li><%= link_to 'My Posts', userposts_path %></li>
+      </ul>
+    <% end %>
+  </div>
+  <div id="tabcontent">
+    <h1>Listing posts of all users</h1>
+  </div>
+</div>
+
+<%= render 'index' %>
+

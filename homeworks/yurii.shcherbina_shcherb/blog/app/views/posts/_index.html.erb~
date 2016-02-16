@@ -1,0 +1,38 @@
+<%= will_paginate %>
+
+<% @posts.each do |post| %>
+  <div class="post">
+    <div class="posttop"></div>
+    <div class="postitem">
+      <h2><%= post.title %>
+        <span class="postinfo">Posted by <%= post.user.name %> <%= time_ago_in_words(post.created_at) %> ago </span>
+      </h2>
+     <%= image_tag post.image_url, class: "leftimg" %>
+     <p><%= post.body %></p>
+    </div> 
+    <div class="postbottom">  
+      <%= link_to 'Show', post %>
+      <% if signed_in? %> 
+        <% if current_user?(post.user) || current_user.admin? %>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      <% end %>
+      <h4>Coments...</h4>
+      <ul>
+        <% @comments.each do |comment_text| %>
+          <li>
+            <%= comment_text.comment %>
+            <span class="postinfo">Posted by <%= comment_text.user.name %> <%= time_ago_in_words(comment_text.created_at) %> ago </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<%= will_paginate %>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>

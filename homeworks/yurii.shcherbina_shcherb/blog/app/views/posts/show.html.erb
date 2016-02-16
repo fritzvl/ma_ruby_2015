@@ -1,0 +1,19 @@
+<% provide(:title, "Editing post") %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="post">
+  <div class="posttop"></div>
+  <div class="postitem">
+    <h2><%= @post.title %>
+      <span class="postinfo">Posted by <%= @post.user.name %> <%= time_ago_in_words(@post.created_at) %> ago </span>
+    </h2>
+    <%= image_tag @post.image_url, class: "leftimg" %>
+    <p><%= @post.body %></p>
+  </div> 
+  <div class="postbottom">  
+    <%= link_to 'Show', @post %> |
+    <%= link_to 'Back', allposts_path %>
+  </div>
+</div>
+
