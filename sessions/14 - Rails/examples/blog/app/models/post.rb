@@ -14,4 +14,13 @@
 class Post < ActiveRecord::Base
   belongs_to :author
   has_many :comments
+
+  after_create :notify_by_mail
+
+  private
+
+  def notify_by_mail
+    SendMailJob.perform_later self
+  end
+
 end

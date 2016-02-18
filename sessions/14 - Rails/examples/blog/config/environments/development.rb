@@ -40,5 +40,17 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # Needed by devise
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: 'example.com' }
+  config.action_mailer.smtp_settings = {
+      :user_name => Rails.application.secrets.smtp_user_name,
+      :password => Rails.application.secrets.smtp_password,
+      :address => Rails.application.secrets.smtp_address,
+      :domain => Rails.application.secrets.smtp_domain,
+      :port => Rails.application.secrets.smtp_port,
+      :authentication => Rails.application.secrets.smtp_authentication
+  }
 end
