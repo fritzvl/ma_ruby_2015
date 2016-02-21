@@ -1,4 +1,4 @@
-Lesson 13.Rails
+Lesson 14.Rails
 ------------------
 
 RubyOnRails web application framework
@@ -42,6 +42,16 @@ RubyOnRails web application framework
   * Add simple dashboard
   
 -------------------
+
+#### RoR front-end
+---------------
+
+* Layouts/Views/Partials
+* Assets pipeline. Why and how?
+* ERB/HAML/Slim/Liquid
+* Forms/Simple forms
+* SCSS
+* Javascript, AJAX, Turbolinks
 
 
 * Useful links
