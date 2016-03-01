@@ -527,7 +527,7 @@ form fieldset.inputs {
   border-radius: 4px;
   box-shadow: inset 0 1px 4px #ddd;
 }
-/* line 16, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/bundler/gems/activeadmin-4349a2237894/app/assets/stylesheets/active_admin/_forms.scss */
+/* line 17, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/bundler/gems/activeadmin-4349a2237894/app/assets/stylesheets/active_admin/_forms.scss */
 form fieldset legend {
   width: 100%;
 }
@@ -1450,7 +1450,7 @@ table.index_table td {
   color: #5E6469;
   padding: 5px 10px 3px 10px;
 }
-/* line 17, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/bundler/gems/activeadmin-4349a2237894/app/assets/stylesheets/active_admin/components/_modal_dialog.scss */
+/* line 18, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/bundler/gems/activeadmin-4349a2237894/app/assets/stylesheets/active_admin/components/_modal_dialog.scss */
 .ui-dialog .ui-dialog-titlebar span {
   font-size: 1.1em;
 }
@@ -1575,7 +1575,7 @@ table.index_table td {
   padding: 14px 25px;
   text-align: center;
 }
-/* line 16, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/bundler/gems/activeadmin-4349a2237894/app/assets/stylesheets/active_admin/components/_blank_slates.scss */
+/* line 17, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/bundler/gems/activeadmin-4349a2237894/app/assets/stylesheets/active_admin/components/_blank_slates.scss */
 .blank_slate_container .blank_slate small {
   display: block;
   font-size: 0.9em;

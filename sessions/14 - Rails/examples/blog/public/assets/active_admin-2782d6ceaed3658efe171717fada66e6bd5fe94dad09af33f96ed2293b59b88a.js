@@ -586,7 +586,7 @@ var Sizzle =
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2015-10-17
+ * Date: 2015-10-18
  */
 (function( window ) {
 
@@ -1225,7 +1225,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 				"<select id='" + expando + "-\r\\' msallowcapture=''>" +
 				"<option selected=''></option></select>";
 
-			// Support: IE8, Opera 11-12.17
+			// Support: IE8, Opera 11-12.18
 			// Nothing should be selected when empty strings follow ^= or $= or *=
 			// The test attribute must be unknown in Opera but "safe" for WinRT
 			// http://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
@@ -6725,7 +6725,7 @@ if ( window.getComputedStyle ) {
 			}
 
 			// A tribute to the "awesome hack by Dean Edwards"
-			// Chrome < 17 and Safari 5.0 uses "computed value"
+			// Chrome < 18 and Safari 5.0 uses "computed value"
 			// instead of "used value" for margin-right
 			// Safari 5.1.7 (at least) returns percentage for a larger set of values,
 			// but width seems to be reliably pixels
