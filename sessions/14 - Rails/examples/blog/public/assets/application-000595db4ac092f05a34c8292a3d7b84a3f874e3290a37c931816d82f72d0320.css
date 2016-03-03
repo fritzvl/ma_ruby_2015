@@ -2290,7 +2290,7 @@ samp {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-/* line 17, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_code.scss */
+/* line 17 – Search Engines, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_code.scss */
 code {
   padding: 2px 4px;
   font-size: 90%;
@@ -3477,7 +3477,7 @@ caption {
   text-align: left;
 }
 
-/* line 17, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_tables.scss */
+/* line 17 – Search Engines, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_tables.scss */
 th {
   text-align: left;
 }
@@ -5037,7 +5037,7 @@ tbody.collapse.in {
   position: relative;
   float: left;
 }
-/* line 17, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_button-groups.scss */
+/* line 17 – Search Engines, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_button-groups.scss */
 .btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
 .btn-group-vertical > .btn:hover,
 .btn-group-vertical > .btn:focus,
@@ -5430,7 +5430,7 @@ tbody.collapse.in {
 .nav:after {
   clear: both;
 }
-/* line 17, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_navs.scss */
+/* line 17 – Search Engines, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_navs.scss */
 .nav > li {
   position: relative;
   display: block;
@@ -7036,7 +7036,7 @@ a.list-group-item-success,
 button.list-group-item-success {
   color: #3c763d;
 }
-/* line 17, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/mixins/_list-group.scss */
+/* line 17 – Search Engines, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/mixins/_list-group.scss */
 a.list-group-item-success .list-group-item-heading,
 button.list-group-item-success .list-group-item-heading {
   color: inherit;
@@ -7069,7 +7069,7 @@ a.list-group-item-info,
 button.list-group-item-info {
   color: #31708f;
 }
-/* line 17, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/mixins/_list-group.scss */
+/* line 17 – Search Engines, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/mixins/_list-group.scss */
 a.list-group-item-info .list-group-item-heading,
 button.list-group-item-info .list-group-item-heading {
   color: inherit;
@@ -7102,7 +7102,7 @@ a.list-group-item-warning,
 button.list-group-item-warning {
   color: #8a6d3b;
 }
-/* line 17, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/mixins/_list-group.scss */
+/* line 17 – Search Engines, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/mixins/_list-group.scss */
 a.list-group-item-warning .list-group-item-heading,
 button.list-group-item-warning .list-group-item-heading {
   color: inherit;
@@ -7135,7 +7135,7 @@ a.list-group-item-danger,
 button.list-group-item-danger {
   color: #a94442;
 }
-/* line 17, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/mixins/_list-group.scss */
+/* line 17 – Search Engines, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/mixins/_list-group.scss */
 a.list-group-item-danger .list-group-item-heading,
 button.list-group-item-danger .list-group-item-heading {
   color: inherit;
@@ -7650,7 +7650,7 @@ button.list-group-item-danger.active:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
-/* line 17, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_wells.scss */
+/* line 17 – Search Engines, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_wells.scss */
 .well blockquote {
   border-color: #ddd;
   border-color: rgba(0, 0, 0, 0.15);
@@ -7679,7 +7679,7 @@ button.list-group-item-danger.active:focus {
   opacity: 0.2;
   filter: alpha(opacity=20);
 }
-/* line 17, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_close.scss */
+/* line 17 – Search Engines, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_close.scss */
 .close:hover, .close:focus {
   color: #000;
   text-decoration: none;
@@ -8446,7 +8446,7 @@ button.close {
   margin-right: auto;
 }
 
-/* line 17, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_utilities.scss */
+/* line 17 – Search Engines, /Users/zhuchara/.rvm/gems/ruby-2.2.3@ma-ruby-2015-rails/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_utilities.scss */
 .pull-right {
   float: right !important;
 }
