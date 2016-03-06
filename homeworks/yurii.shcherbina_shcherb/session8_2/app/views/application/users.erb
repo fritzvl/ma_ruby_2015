@@ -1,0 +1,14 @@
+<h3>Hello, <%= @user.name %>.</h3>
+<br>
+<p>You can delete own profile</p>
+<form method="delete" action="/users/:id/delete">
+  <input type="submit" name="delete" value="Delete">
+</form>
+<br>
+<p>You can save own personal data to file</p>
+<form method="get" action="/users/save/<%= @user.id%>">
+  <input type="submit" name="save" value="Save">
+</form>
+<br>
+
+<strong><a href="/users/new">Sign up</a></strong>

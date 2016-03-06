@@ -1,0 +1,4 @@
+class AddIndexToComment < ActiveRecord::Migration
+  def change
+  end
+end

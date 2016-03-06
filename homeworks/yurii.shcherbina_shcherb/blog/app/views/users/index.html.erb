@@ -1,0 +1,37 @@
+<% provide(:title, "Listing user") %>
+
+<div class="post">
+  <div class="posttop"></div>
+  <div class="postitem">
+    <h1>Listing users</h1>
+
+    <%= will_paginate %>
+
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Email</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+          <%= render user %>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= will_paginate %>
+
+  </div>
+  <div class='postbottom'>
+    <%= link_to 'New User', new_user_path %>
+  </div>
+</div>
+
+

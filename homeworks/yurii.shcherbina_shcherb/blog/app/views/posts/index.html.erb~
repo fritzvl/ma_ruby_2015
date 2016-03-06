@@ -1,0 +1,39 @@
+
+<div id="tab">
+  <div id="tabhead">
+    <% if signed_in? %>
+      <ul>
+        <li class="activetab"><%= link_to 'All Posts', allposts_path %></li>
+        <li><%= link_to 'My Posts', userposts_path %></li>
+      </ul>
+    <% end %>
+  </div>
+  <div id="tabcontent">
+    <h1>Listing posts</h1>
+  </div>
+</div>
+
+<%= will_paginate %>
+
+<% @posts.each do |post| %>
+  <div class="post">
+    <div class="posttop"></div>
+    <div class="postitem">
+      <h2><%= post.title %>
+        <span class="postinfo">Posted by <%= post.user.name %> <%= time_ago_in_words(post.created_at) %> ago </span>
+      </h2>
+      <p><%= post.body %></p>
+    </div> 
+    <div class="postbottom">  
+      <%= link_to 'Show', post %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+<% end %>
+
+<%= will_paginate %>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
